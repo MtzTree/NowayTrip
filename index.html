@@ -1,1 +1,2865 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173B3A">
+<title>OSLO V6 · Mobile Travel Guide</title>
+
+<style>
+:root {
+  --bg: #F4F2EC;
+  --card: #FFFDF8;
+  --ink: #18302F;
+  --muted: #6C7773;
+  --blue: #456D79;
+  --green: #365C50;
+  --red: #A44E43;
+  --gold: #A78345;
+  --purple: #73547F;
+  --line: #D9DDD6;
+  --shadow: 0 8px 28px rgba(24,48,47,.08);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: auto;
+  padding: 0 16px 60px;
+}
+
+/* HERO */
+
+.hero {
+  margin: 0 -16px 16px;
+  padding: 34px 20px 28px;
+  color: white;
+  background:
+    linear-gradient(145deg, #173B3A 0%, #416B78 100%);
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: .18em;
+  opacity: .72;
+}
+
+.hero h1 {
+  margin: 8px 0 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.pills {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.pill {
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+/* NAV */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 9px 0;
+  background: rgba(244,242,236,.94);
+  backdrop-filter: blur(12px);
+}
+
+.nav a {
+  flex: 0 0 auto;
+  padding: 7px 13px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* HEADINGS */
+
+h2 {
+  margin: 30px 0 12px;
+  font-size: 25px;
+  letter-spacing: -.02em;
+}
+
+h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: -5px;
+}
+
+/* CARD */
+
+.card {
+  margin: 10px 0;
+  padding: 17px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* BADGES */
+
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 7px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.must {
+  color: #315747;
+  background: #E6F0EA;
+}
+
+.bonus {
+  color: #765C21;
+  background: #F3EAD3;
+}
+
+.deadline {
+  color: #8C4037;
+  background: #F7DFDB;
+}
+
+.shopping {
+  color: #69497A;
+  background: #EEE5F3;
+}
+
+.food {
+  color: #405B73;
+  background: #E7EDF4;
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  margin-top: 18px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 3px solid var(--bg);
+}
+
+.time {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.place {
+  margin: 2px 0;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.detail {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* ROUTE */
+
+.route {
+  margin-top: 9px;
+  padding: 11px 12px;
+  background: #EDF2EF;
+  border-radius: 13px;
+  font-size: 13px;
+}
+
+.route strong {
+  color: var(--green);
+}
+
+/* NOTES */
+
+.note {
+  margin: 10px 0;
+  padding: 11px 13px;
+  background: #F8F2E5;
+  border-left: 4px solid var(--gold);
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.alert {
+  margin: 10px 0;
+  padding: 11px 13px;
+  background: #FAECE9;
+  border-left: 4px solid var(--red);
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mini {
+  padding: 13px;
+  background: #F7F6F0;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+}
+
+.mini b {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.mini span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* MAP */
+
+.map {
+  margin-top: 15px;
+  padding: 10px;
+  background: #F0F3EF;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* SHOP */
+
+.store {
+  margin: 10px 0;
+  padding: 13px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+}
+
+.store-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* TABLE */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th,
+td {
+  padding: 9px 6px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* CHECKLIST */
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.check input {
+  margin-top: 4px;
+  accent-color: var(--green);
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+  <div class="kicker">
+    OSLO V6 · MOBILE TRAVEL GUIDE
+  </div>
+
+  <h1>
+    Oslo<br>
+    04—06 SEP 2026
+  </h1>
+
+  <p>
+    不回頭 · 開門時間優先 · Shopping ≥ 4h ·
+    MUNCH《吶喊》優先 · Fjord 早上去
+  </p>
+
+  <div class="pills">
+    <span class="pill">📍 Oslo S</span>
+    <span class="pill">👫 2 Adults</span>
+    <span class="pill">🇳🇴 Nordic Minimal</span>
+    <span class="pill">V5 → V6</span>
+  </div>
+
+</header>
+
+
+<!-- ================= NAV ================= -->
+
+<nav class="nav">
+  <a href="#day1">9/4</a>
+  <a href="#day2">9/5</a>
+  <a href="#day3">9/6</a>
+  <a href="#shopping">Shopping</a>
+  <a href="#food">Food</a>
+  <a href="#transport">交通</a>
+</nav>
+
+
+<!-- ================= MASTER STRATEGY ================= -->
+
+<section class="card">
+
+  <h3>旅行總策略</h3>
+
+  <div class="grid">
+
+    <div class="mini">
+      <b>9/4</b>
+      <span>
+        MUNCH → Fiskeriet →
+        有精神才加 Opera / Deichman
+      </span>
+    </div>
+
+    <div class="mini">
+      <b>9/5</b>
+      <span>
+        Shopping 4h →
+        City Hall → Nobel →
+        Palace → Akershus → Fjord
+      </span>
+    </div>
+
+    <div class="mini">
+      <b>9/6</b>
+      <span>
+        早上 Hovedøya →
+        Grünerløkka →
+        GANNI → Vintage → Vulkan
+      </span>
+    </div>
+
+    <div class="mini">
+      <b>核心原則</b>
+      <span>
+        不為了完成景點清單硬撐。
+        有 deadline 的先完成。
+      </span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- DAY 1 -->
+<!-- ================================================= -->
+
+<section id="day1">
+
+<h2>DAY 1 · 9/4 Fri</h2>
+
+<p class="subtitle">
+抵達後第一天。15:00 直接 MUNCH。
+19:30–20:00 視為理想收工。
+</p>
+
+
+<div class="timeline">
+
+
+<!-- MUNCH -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+15:00–17:15 / 17:30
+</div>
+
+<div class="place">
+MUNCH
+</div>
+
+<div class="badges">
+<span class="badge must">MUST</span>
+<span class="badge deadline">15:00 FIRST</span>
+</div>
+
+<div class="meta">
+Edvard Munchs plass 1
+· Oslo S 步行約 10 分鐘
+</div>
+
+<div class="detail">
+
+<b>進館第一件事：</b>
+
+問工作人員：
+
+<br><br>
+
+<em>
+“Which version of The Scream is currently on display,
+and when will it rotate?”
+</em>
+
+<br><br>
+
+不要自行假設《吶喊》輪換時間。
+
+基本預留約 2–2.5 小時，
+但如果當天疲累，不需要為了三個版本硬撐。
+
+</div>
+
+
+<div class="route">
+
+<strong>Oslo S → MUNCH</strong>
+
+<br>
+
+直接步行約 10 min。
+
+<br>
+
+若有行李，先寄存再進館。
+
+</div>
+
+
+<div class="note">
+
+🎟️ 建議預先購買 timed-entry。
+
+<br>
+
+《吶喊》三版本輪替的實際狀態，
+以當天館內公告／工作人員資訊為準。
+
+</div>
+
+
+<div class="detail">
+
+<b>必看：</b>
+《吶喊》、Munch 主展、
+建築與高樓層視野。
+
+<br><br>
+
+<b>必買方向：</b>
+《吶喊》明信片、藝術書、
+Munch 設計品。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.munch.no/en/visit-us/"
+target="_blank">
+
+MUNCH 官方 Visit Us →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FISKERIET -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+17:30–18:45
+</div>
+
+<div class="place">
+Fiskeriet Bjørvika
+</div>
+
+<div class="badges">
+
+<span class="badge food">
+FOOD
+</span>
+
+<span class="badge must">
+第一晚固定
+</span>
+
+</div>
+
+<div class="meta">
+Operagata 69b
+· MUNCH 步行約 8–10 min
+</div>
+
+<div class="detail">
+
+<b>建議入座：</b>
+18:00 左右。
+
+<br><br>
+
+不要因為餐廳營業到很晚，
+就把晚餐拖到 20:00。
+
+</div>
+
+<div class="detail">
+
+<b>必吃方向：</b>
+
+<br>
+• Fish & Chips
+<br>
+• Fiskesuppe
+<br>
+• Bacalao
+<br><br>
+
+實際魚種依當日供應。
+
+</div>
+
+
+<div class="route">
+
+<strong>MUNCH → Fiskeriet</strong>
+
+<br>
+
+沿 Bjørvika 海邊步行，
+約 8–10 分鐘。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.fiskeriet.com/"
+target="_blank">
+
+Fiskeriet 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- OPERA -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+18:50–19:30
+</div>
+
+<div class="place">
+Oslo Opera House
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+BONUS
+</span>
+
+<span class="badge bonus">
+TIRED? SKIP
+</span>
+
+</div>
+
+<div class="detail">
+
+只把屋頂、外部建築、
+港邊夜景當晚間散步。
+
+<br><br>
+
+Foyer 室內是否開放，
+依當日官方安排。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Fiskeriet → Opera
+</strong>
+
+<br>
+
+步行約 5 分鐘。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.operaen.no/en/"
+target="_blank">
+
+Opera 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- DEICHMAN -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+19:30–20:00
+</div>
+
+<div class="place">
+Deichman / Hotel
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+BONUS
+</span>
+
+</div>
+
+<div class="detail">
+
+如果還有精神，
+可以快速看 Deichman Bjørvika。
+
+<br><br>
+
+如果已經想睡：
+
+<b>直接回 Oslo S / 飯店。</b>
+
+<br><br>
+
+第一天不追景點數。
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 1 MAP -->
+
+<div class="map">
+
+<svg
+viewBox="0 0 700 150"
+xmlns="http://www.w3.org/2000/svg">
+
+<path
+d="M70 75 L245 75 L420 75 L610 75"
+fill="none"
+stroke="#365C50"
+stroke-width="6"/>
+
+<circle cx="70" cy="75" r="15" fill="#365C50"/>
+<circle cx="245" cy="75" r="15" fill="#416B78"/>
+<circle cx="420" cy="75" r="15" fill="#A88445"/>
+<circle cx="610" cy="75" r="15" fill="#6D7774"/>
+
+<g
+font-size="17"
+fill="#18302F">
+
+<text x="70" y="120" text-anchor="middle">
+Oslo S
+</text>
+
+<text x="245" y="120" text-anchor="middle">
+MUNCH
+</text>
+
+<text x="420" y="120" text-anchor="middle">
+Fiskeriet
+</text>
+
+<text x="610" y="120" text-anchor="middle">
+Opera
+</text>
+
+</g>
+
+</svg>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- DAY 2 -->
+<!-- ================================================= -->
+
+<section id="day2">
+
+<h2>DAY 2 · 9/5 Sat</h2>
+
+<p class="subtitle">
+主力日。Shopping 不壓縮。
+精品先買，再一路往文化景點與港邊。
+</p>
+
+
+<div class="alert">
+
+🔴 Bogstadveien 2026 活動名稱、
+時間與攤位內容，
+旅行前請以官方最新公告為最終準則。
+
+</div>
+
+
+<div class="timeline">
+
+
+<!-- SHOPPING -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+10:00–12:00
+</div>
+
+<div class="place">
+Steen & Strøm · Luxury
+</div>
+
+<div class="badges">
+
+<span class="badge shopping">
+SHOPPING
+</span>
+
+<span class="badge must">
+OPENING PRIORITY
+</span>
+
+</div>
+
+<div class="meta">
+Nedre Slottsgate 8
+· Oslo S 步行約 8–10 min
+</div>
+
+<div class="detail">
+
+<b>第一輪直接買。</b>
+
+<br><br>
+
+精品、高端設計、
+international designers。
+
+<br><br>
+
+如果有明確購買目標，
+不要把它留到下午。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Oslo S → Steen & Strøm
+</strong>
+
+<br>
+
+直接步行約 8–10 分鐘。
+
+<br>
+
+Oslo S
+→ Karl Johans gate
+→ Nedre Slottsgate
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://steenogstromoslo.no/"
+target="_blank">
+
+Steen & Strøm 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- BOGSTADVEIEN -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+12:00–14:00
+</div>
+
+<div class="place">
+Bogstadveien / Hegdehaugsveien
+</div>
+
+<div class="badges">
+
+<span class="badge shopping">
+SHOPPING ≥ 4H
+</span>
+
+<span class="badge must">
+MUST
+</span>
+
+</div>
+
+<div class="detail">
+
+這裡不是單純「看市集」。
+
+<br><br>
+
+把：
+
+<br>
+• Shopping street
+<br>
+• 街區活動
+<br>
+• 選物
+<br>
+• Vintage
+<br>
+• 沿街服飾
+<br>
+
+一起完成。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Steen & Strøm → Bogstadveien
+</strong>
+
+<br>
+
+步行約 15–20 分鐘。
+
+<br><br>
+
+抵達後一路往 Majorstuen 方向走，
+不要來回折返。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.bogstadveien.no/"
+target="_blank">
+
+Bogstadveien 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LUNCH -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+14:00–14:25
+</div>
+
+<div class="place">
+Quick Lunch
+</div>
+
+<div class="badges">
+
+<span class="badge food">
+FOOD
+</span>
+
+</div>
+
+<div class="detail">
+
+午餐控制在 20–25 分鐘。
+
+<br><br>
+
+今天真正的 priority 是：
+
+<b>Shopping + City Hall deadline。</b>
+
+</div>
+
+</div>
+
+
+<!-- CITY HALL -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+14:45–15:20
+</div>
+
+<div class="place">
+Oslo City Hall
+</div>
+
+<div class="badges">
+
+<span class="badge must">
+MUST
+</span>
+
+<span class="badge deadline">
+DEADLINE
+</span>
+
+</div>
+
+<div class="meta">
+Rådhusplassen 1
+</div>
+
+<div class="detail">
+
+<b>必看：</b>
+
+<br>
+• Main Hall
+<br>
+• Murals
+<br>
+• 建築內部
+
+<br><br>
+
+需要預留 security / queue buffer。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Majorstuen → City Hall
+</strong>
+
+<br>
+
+依當日 Ruter Journey Planner
+選最快 tram / bus 方案。
+
+<br><br>
+
+不要為短距離增加複雜轉乘。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.oslo.kommune.no/english/oslo-city-hall/"
+target="_blank">
+
+Oslo City Hall 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- NOBEL -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+15:25–16:05
+</div>
+
+<div class="place">
+Nobel Peace Center
+</div>
+
+<div class="badges">
+
+<span class="badge must">
+MUST
+</span>
+
+<span class="badge deadline">
+17:00 DEADLINE
+</span>
+
+</div>
+
+<div class="meta">
+Brynjulf Bulls plass 1
+</div>
+
+<div class="detail">
+
+City Hall 出來直接走過去。
+
+<br><br>
+
+約 2–3 分鐘。
+
+<br><br>
+
+展覽內容以
+2026/9/5 當日官方公告為準。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.nobelpeacecenter.org/en/"
+target="_blank">
+
+Nobel Peace Center 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PALACE -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+16:10–16:40
+</div>
+
+<div class="place">
+Royal Palace + Palace Park
+</div>
+
+<div class="badges">
+
+<span class="badge must">
+MUST
+</span>
+
+</div>
+
+<div class="detail">
+
+<b>
+只安排外觀＋廣場＋公園。
+</b>
+
+<br><br>
+
+不把 Palace 室內 tour
+算進 9/5。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Nobel → Palace
+</strong>
+
+<br>
+
+沿 Karl Johans gate /
+Slottsparken 步行約 15–20 分鐘。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.royalcourt.no/"
+target="_blank">
+
+Royal Palace 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- AKERSHUS -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+16:55–17:45
+</div>
+
+<div class="place">
+Akershus Fortress
+</div>
+
+<div class="badges">
+
+<span class="badge must">
+MUST
+</span>
+
+<span class="badge deadline">
+DAYLIGHT
+</span>
+
+</div>
+
+<div class="detail">
+
+重點：
+
+<br>
+• 城牆
+<br>
+• 城堡外圍
+<br>
+• 港景
+<br>
+• Oslo fjord view
+
+<br><br>
+
+雖然堡壘區時間彈性較大，
+仍放在白天。
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Palace → Akershus
+</strong>
+
+<br>
+
+步行約 20–25 分鐘。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.forsvarsbygg.no/en/festningene/akershus-fortress/"
+target="_blank">
+
+Akershus Fortress 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FJORD -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+17:45–18:45
+</div>
+
+<div class="place">
+Aker Brygge → Tjuvholmen
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+BONUS
+</span>
+
+<span class="badge bonus">
+FJORD
+</span>
+
+</div>
+
+<div class="detail">
+
+海港散步、
+現代建築、
+Fjord view。
+
+<br><br>
+
+如果 Shopping 超時：
+
+<b>
+這一段優先縮短。
+</b>
+
+</div>
+
+</div>
+
+
+<!-- DINNER -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+19:00–20:30
+</div>
+
+<div class="place">
+Dinner
+</div>
+
+<div class="badges">
+
+<span class="badge food">
+FOOD
+</span>
+
+</div>
+
+<div class="detail">
+
+第二晚可以安排完整晚餐。
+
+<br><br>
+
+晚餐後不再追加景點。
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 2 MAP -->
+
+<div class="map">
+
+<svg
+viewBox="0 0 700 190"
+xmlns="http://www.w3.org/2000/svg">
+
+<path
+d="M55 45 L165 45 L280 80 L390 115 L500 145 L635 160"
+fill="none"
+stroke="#365C50"
+stroke-width="6"/>
+
+<circle cx="55" cy="45" r="13" fill="#69487A"/>
+<circle cx="165" cy="45" r="13" fill="#69487A"/>
+<circle cx="280" cy="80" r="13" fill="#416B78"/>
+<circle cx="390" cy="115" r="13" fill="#416B78"/>
+<circle cx="500" cy="145" r="13" fill="#365C50"/>
+<circle cx="635" cy="160" r="13" fill="#416B78"/>
+
+<g
+font-size="14"
+fill="#18302F">
+
+<text x="55" y="25" text-anchor="middle">
+Oslo S
+</text>
+
+<text x="165" y="25" text-anchor="middle">
+Luxury
+</text>
+
+<text x="280" y="65" text-anchor="middle">
+Market
+</text>
+
+<text x="390" y="100" text-anchor="middle">
+City Hall
+</text>
+
+<text x="500" y="130" text-anchor="middle">
+Palace
+</text>
+
+<text x="635" y="145" text-anchor="middle">
+Akershus → Fjord
+</text>
+
+</g>
+
+</svg>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- DAY 3 -->
+<!-- ================================================= -->
+
+<section id="day3">
+
+<h2>DAY 3 · 9/6 Sun</h2>
+
+<p class="subtitle">
+Fjord 放早上。Sunday 商店限制多，
+所以 Hovedøya 必須先做。
+</p>
+
+
+<div class="alert">
+
+⛴️ 9/6 不自行捏造船號。
+
+<br><br>
+
+以 Ruter 當日 Journey Planner /
+最新 timetable 為準。
+
+<br><br>
+
+回程至少保留一班 buffer。
+
+</div>
+
+
+<div class="timeline">
+
+
+<!-- OSLO S -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+08:30–09:00
+</div>
+
+<div class="place">
+Oslo S → Aker Brygge
+</div>
+
+<div class="badges">
+
+<span class="badge must">
+EARLY
+</span>
+
+</div>
+
+<div class="route">
+
+<strong>
+Oslo S → Aker Brygge
+</strong>
+
+<br>
+
+搭 Ruter tram / bus。
+
+<br><br>
+
+出發前用 Journey Planner
+選最快方案。
+
+</div>
+
+</div>
+
+
+<!-- HOVEDOYA -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+09:15–11:30
+</div>
+
+<div class="place">
+Hovedøya
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+WEATHER BONUS
+</span>
+
+<span class="badge deadline">
+RETURN BUFFER
+</span>
+
+</div>
+
+<div class="detail">
+
+<b>只去一座島。</b>
+
+<br><br>
+
+天氣好：
+
+去。
+
+<br>
+
+普通：
+
+看體力。
+
+<br>
+
+下雨：
+
+取消。
+
+<br><br>
+
+重點是：
+
+<br>
+• Fjord
+<br>
+• 島上散步
+<br>
+• 修道院遺跡
+<br>
+• Oslo view
+
+</div>
+
+
+<div class="route">
+
+<strong>
+Aker Brygge → Hovedøya
+</strong>
+
+<br>
+
+Ruter ferry。
+
+<br><br>
+
+實際 9/6 班次以
+Ruter 最新 timetable 為準。
+
+<br><br>
+
+<b>
+不要搭最後一班回程。
+</b>
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://ruter.no/en/"
+target="_blank">
+
+Ruter 官方 Journey Planner →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TIM -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+12:00–12:45
+</div>
+
+<div class="place">
+Tim Wendelboe
+</div>
+
+<div class="badges">
+
+<span class="badge food">
+COFFEE
+</span>
+
+<span class="badge must">
+MUST
+</span>
+
+</div>
+
+<div class="detail">
+
+<b>必喝：</b>
+
+<br>
+
+依當日豆單選：
+
+<br>
+• Filter
+<br>
+• Espresso
+
+<br><br>
+
+這裡定位是精品咖啡，
+不安排長午餐。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://timwendelboe.no/"
+target="_blank">
+
+Tim Wendelboe 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- GANNI -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+12:50–13:30
+</div>
+
+<div class="place">
+GANNI Postmodern
+</div>
+
+<div class="badges">
+
+<span class="badge shopping">
+PRELOVED
+</span>
+
+<span class="badge deadline">
+SUN 12–17
+</span>
+
+</div>
+
+<div class="meta">
+Markveien 53
+</div>
+
+<div class="detail">
+
+二手／preloved。
+
+<br><br>
+
+Sunday 開門時間是這一天
+為什麼 Hovedøya 必須早上的關鍵。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://www.ganni.com/en-no/stores-find"
+target="_blank">
+
+GANNI 官方 Store Finder →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PAST LOKKA -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+13:30–14:30
+</div>
+
+<div class="place">
+PAST LØKKA / Vintage
+</div>
+
+<div class="badges">
+
+<span class="badge shopping">
+SECOND-HAND
+</span>
+
+<span class="badge bonus">
+BONUS
+</span>
+
+</div>
+
+<div class="meta">
+Markveien 一帶
+</div>
+
+<div class="detail">
+
+與 GANNI 同一區。
+
+<br><br>
+
+因此直接順路逛，
+不另外折返。
+
+</div>
+
+</div>
+
+
+<!-- VINTAGE -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+14:30–15:15
+</div>
+
+<div class="place">
+Vintage / Second-hand
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+OPTION
+</span>
+
+</div>
+
+<div class="detail">
+
+Sunday 的店家營業差異很大。
+
+<br><br>
+
+不要為了某一家二手店
+專程折返。
+
+<br><br>
+
+以當天開門店家為主。
+
+</div>
+
+</div>
+
+
+<!-- AKERSELVA -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+15:15–16:30
+</div>
+
+<div class="place">
+Akerselva → Vulkan
+</div>
+
+<div class="badges">
+
+<span class="badge bonus">
+SCENIC WALK
+</span>
+
+</div>
+
+<div class="route">
+
+<strong>
+Grünerløkka → Akerselva → Vulkan
+</strong>
+
+<br>
+
+步行約 20–30 分鐘。
+
+<br><br>
+
+一路往 Vulkan，
+不折返。
+
+</div>
+
+</div>
+
+
+<!-- VULKAN -->
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="time">
+16:30–18:00
+</div>
+
+<div class="place">
+Vulkanfisk / Mathallen
+</div>
+
+<div class="badges">
+
+<span class="badge food">
+LAST MEAL
+</span>
+
+</div>
+
+<div class="detail">
+
+<b>定位：</b>
+
+Oslo 最後一餐魚／海鮮。
+
+<br><br>
+
+Vulkanfisk 若當日營業或座位不合，
+以 Mathallen 其他店作備案。
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://mathallenoslo.no/"
+target="_blank">
+
+Mathallen 官方 →
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- DAY 3 MAP -->
+
+<div class="map">
+
+<svg
+viewBox="0 0 700 170"
+xmlns="http://www.w3.org/2000/svg">
+
+<path
+d="M60 55 L200 55 L340 80 L480 110 L625 140"
+fill="none"
+stroke="#365C50"
+stroke-width="6"/>
+
+<circle cx="60" cy="55" r="13" fill="#416B78"/>
+<circle cx="200" cy="55" r="13" fill="#416B78"/>
+<circle cx="340" cy="80" r="13" fill="#A88445"/>
+<circle cx="480" cy="110" r="13" fill="#73547F"/>
+<circle cx="625" cy="140" r="13" fill="#416B78"/>
+
+<g
+font-size="14"
+fill="#18302F">
+
+<text x="60" y="35" text-anchor="middle">
+Oslo S
+</text>
+
+<text x="200" y="35" text-anchor="middle">
+Aker Brygge
+</text>
+
+<text x="340" y="62" text-anchor="middle">
+Hovedøya
+</text>
+
+<text x="480" y="92" text-anchor="middle">
+Løkka
+</text>
+
+<text x="625" y="125" text-anchor="middle">
+Vulkan
+</text>
+
+</g>
+
+</svg>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- SHOPPING -->
+<!-- ================================================= -->
+
+<section id="shopping">
+
+<h2>🛍️ Shopping Master List</h2>
+
+<p class="subtitle">
+先買有 deadline 的，再逛風格型選物。
+</p>
+
+
+<div class="store">
+
+<div class="store-top">
+
+<h3>
+Steen & Strøm
+</h3>
+
+<span class="badge shopping">
+LUXURY
+</span>
+
+</div>
+
+<p class="detail">
+
+精品主站。
+
+<br><br>
+
+優先：
+
+<br>
+• Designer
+<br>
+• International brands
+<br>
+• Scandinavian fashion
+<br>
+• Jewelry
+
+<br><br>
+
+<b>
+10:00 第一輪完成。
+</b>
+
+</p>
+
+</div>
+
+
+<div class="store">
+
+<div class="store-top">
+
+<h3>
+Bogstadveien
+</h3>
+
+<span class="badge shopping">
+SHOPPING STREET
+</span>
+
+</div>
+
+<p class="detail">
+
+沿街逛：
+
+<br>
+• Fashion
+<br>
+• Lifestyle
+<br>
+• Design
+<br>
+• Street market
+
+<br><br>
+
+一路往 Majorstuen，
+不要折返。
+
+</p>
+
+</div>
+
+
+<div class="store">
+
+<div class="store-top">
+
+<h3>
+GANNI Postmodern
+</h3>
+
+<span class="badge shopping">
+PRELOVED
+</span>
+
+</div>
+
+<p class="detail">
+
+9/6 Sunday。
+
+<br><br>
+
+定位：
+
+GANNI 二手／preloved。
+
+</p>
+
+</div>
+
+
+<div class="store">
+
+<div class="store-top">
+
+<h3>
+Vintage / Second-hand
+</h3>
+
+<span class="badge shopping">
+BONUS
+</span>
+
+</div>
+
+<p class="detail">
+
+Grünerløkka 是主要區域。
+
+<br><br>
+
+Sunday 店家營業差異大，
+不為單一店家折返。
+
+</p>
+
+</div>
+
+
+<div class="note">
+
+💎 Shopping 最低要求：
+
+<b>
+9/5 10:00–14:00 = 4 小時
+</b>
+
+<br><br>
+
+如果前面超時，
+不要壓縮成 1–2 小時。
+
+<br>
+
+應該刪減的是：
+
+Aker Brygge / Tjuvholmen 的 Bonus。
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FOOD -->
+<!-- ================================================= -->
+
+<section id="food">
+
+<h2>🍽️ Food / Cafe</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+店家
+</th>
+
+<th>
+日期
+</th>
+
+<th>
+定位
+</th>
+
+<th>
+必吃 / 必喝
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+<b>
+Fiskeriet
+</b>
+</td>
+
+<td>
+9/4
+</td>
+
+<td>
+第一晚
+</td>
+
+<td>
+Fish & Chips<br>
+Fiskesuppe<br>
+Bacalao
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<b>
+Tim Wendelboe
+</b>
+</td>
+
+<td>
+9/6
+</td>
+
+<td>
+精品咖啡
+</td>
+
+<td>
+Filter<br>
+Espresso
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<b>
+Fuglen
+</b>
+</td>
+
+<td>
+備選
+</td>
+
+<td>
+Coffee
+</td>
+
+<td>
+Coffee<br>
+Scandinavian interior
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+<b>
+Vulkanfisk
+</b>
+</td>
+
+<td>
+9/6
+</td>
+
+<td>
+最後海鮮餐
+</td>
+
+<td>
+Fish<br>
+Seafood
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- TRANSPORT -->
+<!-- ================================================= -->
+
+<section id="transport">
+
+<h2>🚋 交通速查</h2>
+
+
+<div class="card">
+
+<h3>
+DAY 1
+</h3>
+
+<p class="detail">
+
+<b>
+Oslo S → MUNCH
+</b>
+
+<br>
+Walk ~10 min
+
+<br><br>
+
+<b>
+MUNCH → Fiskeriet
+</b>
+
+<br>
+Walk ~8–10 min
+
+<br><br>
+
+<b>
+Fiskeriet → Opera
+</b>
+
+<br>
+Walk ~5 min
+
+<br><br>
+
+<b>
+Opera → Oslo S
+</b>
+
+<br>
+Walk ~10–12 min
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+DAY 2
+</h3>
+
+<p class="detail">
+
+<b>
+Oslo S → Steen & Strøm
+</b>
+
+<br>
+Walk ~8–10 min
+
+<br><br>
+
+<b>
+Steen & Strøm → Bogstadveien
+</b>
+
+<br>
+Walk ~15–20 min
+
+<br><br>
+
+<b>
+Majorstuen → City Hall
+</b>
+
+<br>
+Ruter + walk
+
+<br><br>
+
+<b>
+City Hall → Nobel
+</b>
+
+<br>
+Walk ~2–3 min
+
+<br><br>
+
+<b>
+Nobel → Palace
+</b>
+
+<br>
+Walk ~15–20 min
+
+<br><br>
+
+<b>
+Palace → Akershus
+</b>
+
+<br>
+Walk ~20–25 min
+
+<br><br>
+
+<b>
+Akershus → Aker Brygge
+</b>
+
+<br>
+Harbor walk
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+DAY 3
+</h3>
+
+<p class="detail">
+
+<b>
+Oslo S → Aker Brygge
+</b>
+
+<br>
+Ruter
+
+<br><br>
+
+<b>
+Aker Brygge → Hovedøya
+</b>
+
+<br>
+Ruter Ferry
+
+<br><br>
+
+<b>
+Hovedøya → Aker Brygge
+</b>
+
+<br>
+Return with buffer
+
+<br><br>
+
+<b>
+Grünerløkka → Vulkan
+</b>
+
+<br>
+Akerselva walk
+
+</p>
+
+</div>
+
+
+<div class="alert">
+
+📌 Ferry 最重要：
+
+<br><br>
+
+不要把夏季班次直接套用到
+2026/9/6。
+
+<br><br>
+
+旅行前 1–2 天：
+
+<br>
+
+Ruter Journey Planner
+→ 查 exact departure
+→ 查 disruption
+→ 查 return ferry
+
+</div>
+
+
+<div class="meta">
+
+<a
+href="https://ruter.no/en/"
+target="_blank">
+
+Ruter 官方 →
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- TRAVEL MODE -->
+<!-- ================================================= -->
+
+<section>
+
+<h2>
+🎒 Travel Mode
+</h2>
+
+
+<div class="grid">
+
+
+<div class="mini">
+
+<b>
+⭐ MUST
+</b>
+
+<span>
+
+MUNCH
+
+<br>
+Fiskeriet
+
+<br>
+9/5 Shopping
+
+<br>
+City Hall
+
+<br>
+Nobel
+
+<br>
+Palace
+
+<br>
+Akershus
+
+<br>
+GANNI
+
+<br><br>
+
+Hovedøya：
+
+看天氣。
+
+</span>
+
+</div>
+
+
+<div class="mini">
+
+<b>
+🟡 BONUS
+</b>
+
+<span>
+
+Opera
+
+<br>
+Deichman
+
+<br>
+Aker Brygge
+
+<br>
+Tjuvholmen
+
+<br>
+Vintage
+
+<br>
+Fuglen
+
+</span>
+
+</div>
+
+
+<div class="mini">
+
+<b>
+🔴 DEADLINE
+</b>
+
+<span>
+
+City Hall
+
+<br>
+16:00
+
+<br><br>
+
+Nobel
+
+<br>
+17:00
+
+<br><br>
+
+GANNI
+
+<br>
+Sunday 17:00
+
+</span>
+
+</div>
+
+
+<div class="mini">
+
+<b>
+😴 TIRED?
+</b>
+
+<span>
+
+9/4：
+
+刪 Opera / Deichman
+
+<br><br>
+
+9/5：
+
+刪 Fjord 散步
+
+<br><br>
+
+9/6：
+
+刪 Bonus 二手店
+
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CHECKLIST -->
+<!-- ================================================= -->
+
+<section>
+
+<h2>
+✅ 出發前 Checklist
+</h2>
+
+
+<div class="card">
+
+
+<label class="check">
+
+<input type="checkbox">
+
+MUNCH timed-entry
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+9/4 Fiskeriet 約 18:00
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+9/5 Shopping 目標品牌／尺寸／預算
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+確認 2026/9/5 Bogstadveien 活動
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+9/6 Hovedøya Ruter exact departures
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+Hovedøya 回程至少一班 buffer
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+GANNI Sunday hours 再確認
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox">
+
+依天氣決定 Hovedøya
+
+</label>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<footer>
+
+<b>
+OSLO V6 · Mobile Travel Guide
+</b>
+
+<br><br>
+
+本版延續 V5：
+
+<br>
+
+不回頭 · Shopping ≥4h ·
+第一晚早吃 · MUNCH 優先 ·
+Vigeland 不硬塞 ·
+Hovedøya 早上且不搭最後回程。
+
+<br><br>
+
+營業時間、活動與交通班次可能更新。
+旅行日前請以各官方網站最新資訊為最終版本。
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
+```
 
