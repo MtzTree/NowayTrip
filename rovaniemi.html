@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rovaniemi｜極致 J 人秋季極光版 (含鮭魚小屋營業確認)｜9/12–9/15</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#f5f2ea;--card:#fffdf8;--ink:#172522;--muted:#68736f;--blue:#496b76;--green:#405b4b;--red:#a4473b;--gold:#a87938;--line:#ddd8cd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55}
+.hero{background:linear-gradient(135deg,#e7e1d4,#dce8e7 65%,#f5f2ea);padding:28px 16px;border-bottom:1px solid var(--line)}.wrap{max-width:940px;margin:auto;padding:0 14px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--blue)}h1{font-size:31px;line-height:1.12;margin:8px 0}.hero p{margin:0;color:#53615d;font-size:13px}
+.tabs{position:sticky;top:0;z-index:1000;background:#f5f2eaf2;backdrop-filter:blur(12px);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}.tabs a{white-space:nowrap;text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fffaf1;font-size:12px;font-weight:900}
+.section{margin:24px 0}.title{display:flex;justify-content:space-between;align-items:end;gap:10px}.title h2{font-size:21px;margin:0}.title small{color:var(--muted);font-size:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 10px 28px #26372d0b}
+.notice{background:#eaf0ee;border-left:4px solid var(--green);padding:12px 13px;border-radius:10px;font-size:12px;margin-top:14px}
+.timeline{position:relative;margin-top:8px;padding-left:17px}.timeline:before{content:"";position:absolute;left:6px;top:12px;bottom:10px;width:2px;background:#d2d8d5}.stop{position:relative;padding:0 0 18px 17px}.stop:before{content:"";position:absolute;left:-1px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.time{font-size:12px;font-weight:900;color:var(--blue)}.stop h3{font-size:15px;margin:2px 0; display:flex; align-items:center;}.meta{font-size:11px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#edf0eb;font-weight:900}.tag.red{background:#f4e2df;color:#8b382f}.tag.gold{background:#f1e6d3;color:#79531e}.tag.blue{background:#e3ecef;color:#385d68}.tag.green{background:#ecfdf5;color:#047857}
+.map{height:400px;border-radius:17px;overflow:hidden;border:1px solid var(--line); margin-bottom: 15px;}.map-note{font-size:10px;color:var(--muted);margin-top:6px}
+.grid{display:grid;gap:10px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.map{height:500px}h1{font-size:42px}}
+table{width:100%;border-collapse:collapse;font-size:11px; margin-top:10px;}th,td{text-align:center;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:middle}th{font-size:10px;color:var(--ink);background:#edf0eb;font-weight:900;}
+.alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px; margin-bottom:10px;}.alert.green{background:#e9f0eb;border-left-color:var(--green)}
+.step-num {display:inline-block; width:20px; height:20px; background:var(--blue); color:#fff; border-radius:50%; text-align:center; line-height:20px; font-size:12px; margin-right:6px; font-weight:900; flex-shrink:0;}
+.res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
+footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="kicker">ROVANIEMI · 12–15 SEP 2026</div>
+<h1>🇫🇮 羅瓦涅米｜極致 J 人秋季極光版</h1>
+<p>9/12 飛往聖誕老人故鄉 · 9/13 森林健行與鮭魚小屋 · 9/14 狗狗與馴鹿與 Apukka 渡假村</p>
+<div class="notice"><b>完美無縫接軌計畫：</b>完全依照您提供的 Apukka Shuttle Bus 時刻表，將 9/13 安排為「上午森林健行 ＋ 下午聖誕老人村」，並確認 <b>Santa's Salmon Place 9月已重新營業 (11:00–18:00)</b>，行程完美對接！</div>
+</div></header>
+
+<div class="wrap">
+<nav class="tabs"><a href="index.html">🏠 首頁</a><a href="#d1">9/12 (Sat)</a><a href="#d2">9/13 (Sun)</a><a href="#d3">9/14 (Mon)</a><a href="#fares">📌 Shuttle Bus 時刻與攻略</a></nav>
+
+<section id="d1" class="section">
+<div class="title"><h2>🛬 9/12 Sat</h2><small>跨國移動與入住極光渡假村</small></div>
+<div class="alert green">
+  <b>移動日策略：</b>今天搭乘 AY542 抵達，建議從機場搭計程車先進市區買零食泡麵，再前往渡假村。
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">13:10</div><h3><span class="step-num" style="background:var(--blue)">1</span> ✈️ 抵達 Rovaniemi (RVN)</h3><div class="meta">搭乘 Finnair AY542 航班抵達。</div></div>
+<div class="stop"><div class="time">14:00–15:00</div><h3><span class="step-num" style="background:var(--gold)">2</span> 🛒 市區超市補給 (建議搭計程車)</h3><div class="meta">由於 Apukka Shuttle Bus 沒有直達機場，建議從機場搭計程車去市區的 <b>K-Supermarket</b> 買些零食、泡麵與飲料，這對未來三天的消夜非常重要！</div><div class="tags"><span class="tag blue">J人必備糧食</span></div></div>
+<div class="stop"><div class="time">15:30</div><h3><span class="step-num" style="background:var(--green)">3</span> 🏨 入住 Apukka Resort</h3><div class="meta">搭計程車或接駁車抵達渡假村辦理入住。</div></div>
+<div class="stop"><div class="time">18:00–20:00</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍽️ 餐廳：Restaurant Aitta</h3><div class="meta">在渡假村內享用拉普蘭在地料理（建議提前預約）。</div></div>
+<div class="stop"><div class="time">21:00–00:00</div><h3 style="padding-left:26px;">🌌 渡假村內等極光</h3><div class="meta" style="padding-left:26px;">走到渡假村內的 Olkkajärvi 湖畔，秋天有極高機率可以拍到無雪的極光湖面倒影！</div></div>
+</div></div>
+<div id="map1" class="map"></div>
+<div class="map-note">Day 1 動線：1 抵達機場 ➔ 2 市區超市補給 ➔ 3 入住 Apukka ➔ 4 渡假村晚餐。</div>
+</section>
+
+<section id="d2" class="section">
+<div class="title"><h2>🥾 9/13 Sun</h2><small>森林健行與炭烤鮭魚午餐</small></div>
+<div class="alert red">
+  <b>交通精密計算：</b>根據接駁車時刻，前往 Hiking Area 的班次極少。早上先去健行，下午搭車前往聖誕老人村，剛好趕上鮭魚小屋 9 月份重新營業！
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">08:00–09:20</div><h3><span class="step-num">1</span> 🍳 渡假村早餐</h3><div class="meta">吃飽一點，準備去秋季森林健行。</div></div>
+<div class="stop"><div class="time">09:45–09:55</div><h3><span class="step-num" style="background:var(--red)">2</span> 🚌 搭車前往 Hiking Area</h3><div class="meta">在 Apukka Resort 門口搭乘 <b>09:45</b> 的 Shuttle Bus，短短 10 分鐘，<b>09:55</b> 即可抵達 Arctic Circle Hiking Area。</div><div class="tags"><span class="tag red">精準搭車</span></div></div>
+<div class="stop"><div class="time">10:00–14:00</div><h3><span class="step-num" style="background:var(--green)">3</span> 🌲 Arctic Circle Hiking Area 健行</h3><div class="meta">您有完整的 4 小時可以探索秋季的拉普蘭森林！推薦走 <b>Könkäänvaara 步道</b> 或沿著急流散步，途中可以在營火點烤昨天超市買的香腸當作點心！</div><div class="tags"><span class="tag green">秋季金黃森林</span></div></div>
+<div class="stop"><div class="time">14:15–14:35</div><h3><span class="step-num" style="background:var(--red)">4</span> 🚌 搭車前往 Santa Claus Village</h3><div class="meta">回到下車處，搭乘約 <b>14:15</b> 抵達的接駁車。這班車會先在 14:25 回到 Apukka，接著在 <b>14:35</b> 抵達聖誕老人村 (SCV)。</div><div class="tags"><span class="tag red">無縫接軌</span></div></div>
+<div class="stop"><div class="time">14:40–15:30</div><h3><span class="step-num" style="background:var(--gold)">5</span> 🍽️ 午餐：Santa's Salmon Place</h3><div class="meta"><b>✅ 9月已重新營業 (11:00–18:00)！</b>抵達村內後，第一件事就是去吃極具人氣的炭烤鮭魚小木屋。<div class="res-box"><b>營業時間確認：</b>9月調整為 11:00–18:00，下午前往剛好避開正中午排隊人潮！</div></div><div class="tags"><span class="tag gold">超推炭烤鮭魚</span></div></div>
+<div class="stop"><div class="time">15:30–17:15</div><h3><span class="step-num" style="background:var(--blue)">6</span> 🎅 聖誕老人辦公室與郵局</h3><div class="meta">跨越地上標示 66°33′07″ 的北極圈線。接著去排隊與聖誕老人合照，並到主郵局把明信片投進「紅色郵筒」。</div></div>
+<div class="stop"><div class="time">17:25–17:35</div><h3><span class="step-num" style="background:var(--red)">7</span> 🚌 搭車返回 Apukka Resort</h3><div class="meta">逛完村莊，搭乘 <b>17:25</b> 的 Shuttle Bus，17:35 就能回到渡假村休息。</div></div>
+</div></div>
+<div id="map2" class="map"></div>
+<div class="map-note">Day 2 動線：1 早餐 ➔ 2 健行區 ➔ 3 森林健行 ➔ 4 搭車 ➔ 5 鮭魚小屋午餐 ➔ 6 聖誕老人村 ➔ 7 回 Apukka。</div>
+</section>
+
+<section id="d3" class="section">
+<div class="title"><h2>🐕 9/14 Mon</h2><small>渡假村全日體驗：哈士奇與馴鹿</small></div>
+<div class="alert green">
+  <b>本日重點：</b>您已預訂了兩項活動，今天完全不需要搭接駁車外出，專心享受渡假村！
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">08:00–09:30</div><h3><span class="step-num">1</span> 🍳 渡假村早餐</h3><div class="meta">悠閒吃完早餐，準備出發見狗狗。</div></div>
+<div class="stop"><div class="time">10:00–12:00</div><h3><span class="step-num" style="background:var(--red)">2</span> 🐕 Autumn Husky Ride on Wheels</h3><div class="meta"><b>✅ 已預訂 (2 Adults)</b><br>秋季限定哈士奇拉輪車 (Cart)，在秋色森林中奔跑，活動後可與狗狗互動拍照。</div></div>
+<div class="stop"><div class="time">12:00–13:00</div><h3><span class="step-num" style="background:var(--gold)">3</span> 🍽️ 午餐：Restaurant Kota</h3><div class="meta">在渡假村內的傳統帳篷餐廳簡單吃個午餐，稍作休息。</div></div>
+<div class="stop"><div class="time">13:15–14:45</div><h3><span class="step-num" style="background:var(--red)">4</span> 🦌 Meet and Feed Reindeer</h3><div class="meta"><b>✅ 已預訂 (2 Adults)</b><br>了解拉普蘭馴鹿文化並親手餵食，極度療癒！</div></div>
+<div class="stop"><div class="time">15:00–17:00</div><h3><span class="step-num" style="background:var(--blue)">5</span> 🧖 芬蘭浴 Sauna 體驗</h3><div class="meta">強烈建議預約渡假村內的桑拿洗去疲憊。</div></div>
+</div></div>
+<div id="map3" class="map"></div>
+<div class="map-note">Day 3 動線：全日皆在 Apukka Resort 內活動。</div>
+</section>
+
+<section id="fares" class="section">
+<div class="title"><h2>📌 Apukka Shuttle Bus 攻略</h2></div>
+<div class="card">
+<p style="font-size:12px; margin-top:0;">精簡版接駁車時刻表，方便隨時在手機核對：</p>
+<b>🚌 去程：從 Apukka 出發</b>
+<table>
+  <tr><th>Apukka 發車</th><th>SCV 抵達</th><th>市中心 抵達</th><th>健行區 抵達</th></tr>
+  <tr><td><b>09:45</b></td><td>-</td><td>-</td><td><b>09:55</b></td></tr>
+  <tr><td>10:15</td><td>10:25</td><td>10:35</td><td>-</td></tr>
+  <tr><td><b>14:05</b></td><td>-</td><td>-</td><td><b>14:15</b></td></tr>
+  <tr><td>14:25</td><td>14:35</td><td>14:45</td><td>-</td></tr>
+  <tr><td>16:45</td><td>16:55</td><td>17:05</td><td>-</td></tr>
+</table>
+
+<b style="display:block; margin-top:10px;">🚌 回程：往 Apukka / 健行區 方向</b>
+<table>
+  <tr><th>市中心 發車</th><th>SCV 發車</th><th>Apukka 抵達</th><th>健行區 抵達</th></tr>
+  <tr><td>09:25</td><td>09:35</td><td>09:45</td><td>09:55</td></tr>
+  <tr><td>13:45</td><td>13:55</td><td>14:05</td><td><b>14:15</b></td></tr>
+  <tr><td>17:15</td><td><b>17:25</b></td><td><b>17:35</b></td><td>-</td></tr>
+</table>
+<div class="res-box"><b>💡 J 人交通總結：</b>9/13 早上搭 <b>09:45</b> 的車去健行，下午搭 <b>14:15</b> 折返的車前往聖誕老人村吃鮭魚，最後搭 <b>17:25</b> 回到飯店！</div>
+</div>
+</section>
+
+<footer>
+資料核對基準日：2026-08-24。地圖底圖 © OpenStreetMap contributors / Leaflet。
+</footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const C={blue:"#496b76",green:"#405b4b",red:"#a4473b",gold:"#a87938"};
+function makeMap(id,pts,color=C.blue, drawLine=false){
+ const m=L.map(id,{scrollWheelZoom:true,zoomControl:true}).setView(pts[0].xy,14);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(m);
+ pts.forEach((p,i)=>{
+  const ic=L.divIcon({className:"pin",html:`<div style="width:30px;height:30px;border-radius:50%;background:${p.c||color};border:3px solid #fff;box-shadow:0 2px 8px #0005;color:#fff;font-weight:900;font-size:11px;display:grid;place-items:center">${i+1}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
+  L.marker(p.xy,{icon:ic}).addTo(m).bindPopup(`<b>${p.n}</b><br><span style="font-size:11px">${p.t||""}</span><br><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${p.xy[0]},${p.xy[1]}">↗ 啟動 Google Maps 導航</a>`);
+ });
+ 
+ if(drawLine){
+   var latlngs = pts.map(p=>p.xy);
+   var polyline = L.polyline(latlngs, {color: '#496b76', weight: 4, opacity: 0.7, dashArray: '8, 8'}).addTo(m);
+ }
+ 
+ m.fitBounds(L.latLngBounds(pts.map(p=>p.xy)),{padding:[30,30],maxZoom:12});
+ return m;
+}
+
+// Day 1
+const d1=[
+{n:"Rovaniemi Airport (RVN)",xy:[66.5654,25.8285],c:C.red,t:"1 機場抵達"},
+{n:"K-Supermarket 市區補給",xy:[66.5028,25.7285],c:C.blue,t:"2 推薦超市"},
+{n:"Apukka Resort",xy:[66.5815,26.0152],c:C.gold,t:"3 住宿點"}
+];
+makeMap("map1",d1,C.blue, true);
+
+// Day 2 (Apukka -> Hiking -> SCV -> Apukka)
+const d2=[
+{n:"Apukka Resort",xy:[66.5815,26.0152],c:C.gold,t:"1 出發 (09:45) & 回程 (17:35)"},
+{n:"Arctic Circle Hiking Area",xy:[66.5950,26.1360],c:C.green,t:"2 森林健行 (09:55 - 14:15)"},
+{n:"Santa Claus Village",xy:[66.5434,25.8481],c:C.red,t:"3 聖誕老人村 (14:35 - 17:25)"}
+];
+makeMap("map2",d2,C.green, true);
+
+// Day 3
+const d3=[
+{n:"Apukka Resort (全日活動)",xy:[66.5815,26.0152],c:C.gold,t:"1 哈士奇 / 馴鹿 / 桑拿"}
+];
+makeMap("map3",d3,C.gold);
+</script>
+</body></html>

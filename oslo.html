@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>OSLO V6.1｜Mobile Travel Guide｜9/4–9/6</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#f5f2ea;--card:#fffdf8;--ink:#172522;--muted:#68736f;--blue:#496b76;--green:#405b4b;--red:#a4473b;--gold:#a87938;--line:#ddd8cd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55}
+.hero{background:linear-gradient(135deg,#e7e1d4,#dce8e7 65%,#f5f2ea);padding:28px 16px;border-bottom:1px solid var(--line)}.wrap{max-width:940px;margin:auto;padding:0 14px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--blue)}h1{font-size:31px;line-height:1.12;margin:8px 0}.hero p{margin:0;color:#53615d;font-size:13px}
+.tabs{position:sticky;top:0;z-index:1000;background:#f5f2eaf2;backdrop-filter:blur(12px);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}.tabs a{white-space:nowrap;text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fffaf1;font-size:12px;font-weight:900}
+.section{margin:24px 0}.title{display:flex;justify-content:space-between;align-items:end;gap:10px}.title h2{font-size:21px;margin:0}.title small{color:var(--muted);font-size:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 10px 28px #26372d0b}
+.notice{background:#eaf0ee;border-left:4px solid var(--green);padding:12px 13px;border-radius:10px;font-size:12px;margin-top:14px}
+.timeline{position:relative;margin-top:8px;padding-left:17px}.timeline:before{content:"";position:absolute;left:6px;top:12px;bottom:10px;width:2px;background:#d2d8d5}.stop{position:relative;padding:0 0 18px 17px}.stop:before{content:"";position:absolute;left:-1px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.time{font-size:12px;font-weight:900;color:var(--blue)}.stop h3{font-size:15px;margin:2px 0}.meta{font-size:11px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#edf0eb;font-weight:900}.tag.red{background:#f4e2df;color:#8b382f}.tag.gold{background:#f1e6d3;color:#79531e}.tag.blue{background:#e3ecef;color:#385d68}
+.map{height:510px;border-radius:17px;overflow:hidden;border:1px solid var(--line)}.map-note{font-size:10px;color:var(--muted);margin-top:6px}
+.grid{display:grid;gap:10px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.map{height:620px}h1{font-size:42px}}
+table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:10px;color:var(--muted)}
+.shop{display:grid;grid-template-columns:34px 1fr auto;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.shop:last-child{border:0}.num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e4ebe8;font-weight:900;color:var(--green)}.shop strong{font-size:13px}.shop small{display:block;color:var(--muted);font-size:10px}.hours{font-size:10px;font-weight:900;background:#f0e9dc;padding:5px 6px;border-radius:7px}.nav{display:inline-block;margin-top:4px;color:var(--blue);font-size:10px;font-weight:900;text-decoration:none}
+.alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px}.green{background:#e9f0eb;border-left-color:var(--green)}
+footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="kicker">OSLO V6.1 · 4–6 SEP 2026</div>
+<h1>🇳🇴 Oslo｜三日手機旅行 Guide</h1>
+<p>9/4 MUNCH → Fiskeriet　·　9/5 精品＋秋季 Market Day → City Hall / Nobel / Akershus　·　9/6 Hovedøya → Grünerløkka → Vulkan</p>
+<div class="notice"><b>V6.1 修正版：</b>地圖改成「每天獨立一張＋自動縮放＋大型編號 Marker＋每點直接 Google Maps 導航」，避免上一版所有點擠在同一張圖而看不清楚。9/5 另外完整展開 Shopping Route。</div>
+</div></header>
+
+<div class="wrap">
+<nav class="tabs"><a href="index.html">🏠 首頁</a><a href="#d1">9/4</a><a href="#d2">9/5</a><a href="#shopping">💎 Shopping</a><a href="#d3">9/6</a><a href="#facts">📌 查證</a></nav>
+
+<section id="d1" class="section">
+<div class="title"><h2>🎨 DAY 1｜9/4 Fri</h2><small>抵達日｜不要硬撐</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">15:00–15:20</div><h3>Oslo S → MUNCH</h3><div class="meta">從 Oslo S 往 Bjørvika 步行約 12–15 分鐘。今天第一站直接去 MUNCH。</div><div class="tags"><span class="tag red">🔴 MUST</span></div></div>
+<div class="stop"><div class="time">15:20–17:30</div><h3>🎨 MUNCH</h3><div class="meta">Edvard Munchs plass 1。9/4 星期五官方正常開放 10:00–21:00。至少抓 2 小時；《吶喊》當天展示版本以館內現場為準。</div><div class="tags"><span class="tag red">⭐⭐⭐⭐⭐</span><span class="tag blue">The Scream</span><span class="tag">13 floors</span></div></div>
+<div class="stop"><div class="time">17:30–17:40</div><h3>🚶 MUNCH → Fiskeriet</h3><div class="meta">Bjørvika 內短距離步行。</div></div>
+<div class="stop"><div class="time">17:40–18:45</div><h3>🐟 Fiskeriet Bjørvika</h3><div class="meta">Operagata 69b。週五目前資料顯示 11:00–22:30；第一天故意早吃，避免 19–20 點時差爆發。</div><div class="tags"><span class="tag gold">🍽️ FIXED</span></div></div>
+<div class="stop"><div class="time">18:45–19:15</div><h3>📚 Deichman Bjørvika</h3><div class="meta">Anne-Cath. Vestlys plass 1。可順路看建築；若累了直接刪。</div><div class="tags"><span class="tag">🟡 BONUS</span></div></div>
+<div class="stop"><div class="time">19:15–19:45</div><h3>🏛️ Opera House 屋頂</h3><div class="meta">外部／屋頂作彈性散步；不為室內 foyer 硬排時間。精神不好就回飯店。</div><div class="tags"><span class="tag">🟡 BONUS</span><span class="tag">😴 可刪</span></div></div>
+<div class="stop"><div class="time">19:45–20:00</div><h3>🏨 回 Oslo S</h3><div class="meta">第一天理想收工點。</div></div>
+</div></div>
+<div id="map1" class="map"></div><div class="map-note">Day 1 地圖：1 Oslo S → 2 MUNCH → 3 Fiskeriet → 4 Deichman → 5 Opera。</div>
+</section>
+
+<section id="d2" class="section">
+<div class="title"><h2>💎 DAY 2｜9/5 Sat</h2><small>Shopping 主力日</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">09:00–09:40</div><h3>🏛️ Oslo City Hall</h3><div class="meta">Rådhusplassen 1。官方 09:00–16:00；需過安檢。早上先完成有 deadline 的室內景點。</div><div class="tags"><span class="tag red">🔴 DEADLINE</span></div></div>
+<div class="stop"><div class="time">10:00–13:15</div><h3>💎 Central Luxury / Fashion Cluster</h3><div class="meta">CHANEL → LV → Arc'teryx → Helly Hansen → Acne Studios → COS → ZARA。完整路線見下方 Shopping 展開。</div><div class="tags"><span class="tag gold">💎 MUST</span></div></div>
+<div class="stop"><div class="time">13:15–13:35</div><h3>🚶 走到 Market Day 起點</h3><div class="meta">由市中心往 Slottsparken / Parkveien 方向移動，不搭電車穿過市集路段。</div></div>
+<div class="stop"><div class="time">13:35–15:25</div><h3>🛍️ Bogstadveien Autumn Market Day</h3><div class="meta">2026/9/5 10:00–18:00；官方稱約 1.2 km，從 Majorstuen 到 Slotts方向，Bogstadveien、Hegdehaugsveien、Valkyriegata 變成市集。</div><div class="tags"><span class="tag gold">⭐⭐⭐⭐⭐</span><span class="tag blue">1.2 km</span></div></div>
+<div class="stop"><div class="time">15:25–15:45</div><h3>🥕 Vinkelplassen Farmers' Market</h3><div class="meta">接 Market Day 尾端；9/5 10:00–18:00。買 local food / cheese / baked goods 等。</div></div>
+<div class="stop"><div class="time">15:45–16:10</div><h3>👑 Royal Palace 外觀＋Park</h3><div class="meta">2026 室內開放季已於 8/16 結束，所以只排外觀。Palace Park 可自由散步。</div><div class="tags"><span class="tag">🟡 BONUS</span></div></div>
+<div class="stop"><div class="time">16:20–16:55</div><h3>🕊️ Nobel Peace Center</h3><div class="meta">9/5 官方 11:00–17:00。目標 16:20 前後進場；不要壓最後 10 分鐘。</div><div class="tags"><span class="tag red">🔴 DEADLINE 17:00</span></div></div>
+<div class="stop"><div class="time">17:05–18:15</div><h3>🏰 Akershus Fortress</h3><div class="meta">由 Nobel / Aker Brygge 一帶步行前往。安排在白天末段，避免太晚。</div></div>
+<div class="stop"><div class="time">18:15–19:00</div><h3>🌊 Aker Brygge → Tjuvholmen</h3><div class="meta">海港散步；腳累可直接刪。</div><div class="tags"><span class="tag">🟡 BONUS</span></div></div>
+</div></div>
+<div id="map2" class="map"></div><div class="map-note">Day 2 地圖刻意分成「Shopping 地圖」與「下午景點地圖」，避免全塞一張造成失真。</div>
+</section>
+
+<section id="shopping" class="section">
+<div class="title"><h2>💎 9/5 完整 Shopping Route</h2><small>獨立展開版</small></div>
+<div class="card">
+<div class="shop"><div class="num">1</div><div><strong>CHANEL</strong><small>Nedre Slottsgate 10｜優先級 S｜先看精品</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Nedre%20Slottsgate%2010%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">2</div><div><strong>Louis Vuitton</strong><small>Karl Johans gt. 16C｜S｜bags / leather goods / shoes / fragrance</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Karl%20Johans%20gt.%2016C%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">3</div><div><strong>Arc'teryx</strong><small>Karl Johans gt. 21｜A｜technical outdoor</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Karl%20Johans%20gt.%2021%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">4</div><div><strong>Helly Hansen</strong><small>Karl Johans gt. 3｜A/B｜Norwegian outdoor heritage</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Karl%20Johans%20gt.%203%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">5</div><div><strong>Acne Studios</strong><small>Øvre Slottsgate 11｜A｜Scandinavian fashion</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=%C3%98vre%20Slottsgate%2011%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">6</div><div><strong>COS</strong><small>Øvre Slottsgate 10｜A｜minimal Scandinavian</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=%C3%98vre%20Slottsgate%2010%2C%20Oslo">↗ 導航</a></div><span class="hours">10–18</span></div>
+<div class="shop"><div class="num">7</div><div><strong>ZARA</strong><small>Øvre Slottsgate 12｜B｜最後壓縮，不值得犧牲前面品牌時間</small><a class="nav" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=%C3%98vre%20Slottsgate%2012%2C%20Oslo">↗ 導航</a></div><span class="hours">10–19</span></div>
+</div>
+<div class="alert"><b>購物時間控制：</b>CHANEL / LV 各 35–40 分鐘；Arc'teryx / Acne 各 25–30 分鐘；HH / COS / ZARA 15–20 分鐘。若超時，先砍 ZARA → HH，不要砍 CHANEL / LV / Arc'teryx / Acne。</div>
+<div id="mapshop" class="map"></div>
+<div class="map-note">Shopping map：只顯示 7 家店＋Market Day 起點，放大到街區尺度，所以店名不會再縮成一團。</div>
+</section>
+
+<section class="section">
+<div class="title"><h2>🚶 9/5 逐段交通</h2><small>不回頭優先</small></div>
+<div class="card"><table>
+<tr><th>段落</th><th>方式</th><th>估計</th><th>備案</th></tr>
+<tr><td>Oslo S → City Hall</td><td>步行</td><td>15–20 min</td><td>電車到 Aker Brygge 一帶</td></tr>
+<tr><td>City Hall → CHANEL</td><td>步行</td><td>10–12 min</td><td>不需搭車</td></tr>
+<tr><td>CHANEL → LV</td><td>步行</td><td>2–4 min</td><td>—</td></tr>
+<tr><td>LV → Arc'teryx</td><td>步行</td><td>2–4 min</td><td>—</td></tr>
+<tr><td>Arc'teryx → HH</td><td>步行</td><td>5–7 min</td><td>—</td></tr>
+<tr><td>HH → Acne/COS/ZARA</td><td>步行</td><td>3–7 min</td><td>—</td></tr>
+<tr><td>ZARA → Market Day</td><td>步行</td><td>15–20 min</td><td>Ruter Journey Planner</td></tr>
+<tr><td>Market Day → Vinkelplassen</td><td>步行</td><td>沿市集 1.2 km</td><td>不要折返</td></tr>
+<tr><td>Vinkelplassen → Palace</td><td>步行</td><td>約 15–20 min</td><td>視體力搭公車</td></tr>
+<tr><td>Palace → Nobel</td><td>步行</td><td>約 15 min</td><td>直接導航</td></tr>
+<tr><td>Nobel → Akershus</td><td>步行</td><td>約 10–15 min</td><td>—</td></tr>
+</table></div>
+</section>
+
+<section id="d3" class="section">
+<div class="title"><h2>🌊 DAY 3｜9/6 Sun</h2><small>Fjord＋Grünerløkka</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">09:00–09:30</div><h3>Oslo S → Aker Brygge</h3><div class="meta">步行約 20–25 分鐘；也可用 Ruter 公共交通。</div><div class="tags"><span class="tag red">🔴 早上出發</span></div></div>
+<div class="stop"><div class="time">09:30–10:00</div><h3>⛴️ Aker Brygge → Hovedøya</h3><div class="meta">9/6 已進入 Ruter 秋季時刻表期間（8/31–10/18）。不要把 2026 夏季 B1X 每20分鐘規則套進 9/6；實際班次應於出發前用 Ruter Journey Planner 查當日。</div></div>
+<div class="stop"><div class="time">10:00–11:45</div><h3>🌲 Hovedøya</h3><div class="meta">只玩一座島：修道院遺跡＋森林步道＋fjord 景觀。不要為了跳島硬塞第二座。</div><div class="tags"><span class="tag">🟡 WEATHER BONUS</span></div></div>
+<div class="stop"><div class="time">11:45–12:30</div><h3>⛴️ 回 Aker Brygge</h3><div class="meta">至少留一班 buffer；不要搭最後一班回程。</div></div>
+<div class="stop"><div class="time">12:30–13:15</div><h3>☕ Tim Wendelboe</h3><div class="meta">Grüners gate 1。週日目前資料 11:00–17:00。咖啡＋簡單休息。</div></div>
+<div class="stop"><div class="time">13:15–14:30</div><h3>♻️ Grünerløkka / Vintage / GANNI POSTMODERN</h3><div class="meta">以當日實際開門狀況為準；週日很多店的營業時間較短，這段留彈性。</div></div>
+<div class="stop"><div class="time">14:30–15:30</div><h3>🌳 Birkelunden</h3><div class="meta">Bonus；不要把「每週日一定有大型 flea market」當成已確認事實。</div><div class="tags"><span class="tag">🟡 BONUS</span></div></div>
+<div class="stop"><div class="time">15:30–16:30</div><h3>🐟 Vulkanfisk / Mathallen</h3><div class="meta">Vulkan 5。Vulkanfisk 週日目前資料 12:00–20:00；適合作為最後一餐。</div></div>
+</div></div>
+<div id="map3" class="map"></div><div class="map-note">Day 3 地圖：Oslo S → Aker Brygge → Hovedøya → Grünerløkka → Vulkan。</div>
+<div class="alert green"><b>Hovedøya 班次原則：</b>Ruter 官方顯示 9/6 已使用 Autumn timetable（8/31–10/18）。因此本頁不捏造船號；旅行當天直接用 Ruter Journey Planner 查「Aker brygge → Hovedøya」及回程，並至少留一班 buffer。</div>
+</section>
+
+<section id="facts" class="section">
+<div class="title"><h2>📌 V6.1 查證重點</h2><small>截至 2026/8/23</small></div>
+<div class="grid">
+<div class="card"><b>🎨 MUNCH</b><p style="font-size:11px;color:var(--muted)">9/4 Fri 10:00–21:00。官方確認「總會有一個版本的 The Scream 展出」，但不要自行預測 9/4 輪替時間。</p></div>
+<div class="card"><b>🛍️ Market Day</b><p style="font-size:11px;color:var(--muted)">9/5 Sat 10:00–18:00；約 1.2 km；Bogstadveien、Hegdehaugsveien、Valkyriegata 封閉汽車與電車，電車約 20:00 恢復。</p></div>
+<div class="card"><b>🏛️ City Hall</b><p style="font-size:11px;color:var(--muted)">每日 09:00–16:00；需要安檢。9/5 不在目前公布的 2026 關閉日清單。</p></div>
+<div class="card"><b>🕊️ Nobel Peace Center</b><p style="font-size:11px;color:var(--muted)">9/1–12/31：Tue–Sun 11:00–17:00。9/5 是週六，所以 17:00 為明確 deadline。</p></div>
+<div class="card"><b>👑 Royal Palace</b><p style="font-size:11px;color:var(--muted)">2026 室內導覽季為 6/20–8/16；9/5 不安排室內，只看外觀與公園。Queen's Park 2026/5/18–10/1 每日 07:00–20:00。</p></div>
+<div class="card"><b>⛴️ Hovedøya</b><p style="font-size:11px;color:var(--muted)">9/6 落在 Autumn timetable 8/31–10/18；夏季 B1X 每20分鐘只適用至 8/30，因此不能套用到 9/6。</p></div>
+</div>
+</section>
+
+<footer>
+資料與規則以官方資料為優先；店家營業時間以 2026/8/23 搜尋到的商家資料整理，出發前 1–2 天仍建議再次確認。地圖底圖 © OpenStreetMap contributors / Leaflet。<br>
+本版特別修正：不再把所有 Day 1–3 點位塞在同一張地圖；每一天及 9/5 Shopping 各自一張，並以街區尺度自動 fit bounds。
+</footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const C={blue:"#496b76",green:"#405b4b",red:"#a4473b",gold:"#a87938"};
+function makeMap(id,pts,route,color=C.blue){
+ const m=L.map(id,{scrollWheelZoom:true,zoomControl:true}).setView(pts[0].xy,14);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(m);
+ pts.forEach((p,i)=>{
+  const ic=L.divIcon({className:"pin",html:`<div style="width:30px;height:30px;border-radius:50%;background:${p.c||color};border:3px solid #fff;box-shadow:0 2px 8px #0005;color:#fff;font-weight:900;font-size:11px;display:grid;place-items:center">${i+1}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
+  L.marker(p.xy,{icon:ic}).addTo(m).bindPopup(`<b>${p.n}</b><br><span style="font-size:11px">${p.t||""}</span><br><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.a||p.n)}">↗ Google Maps 導航</a>`);
+ });
+ if(route) L.polyline(route,{color,weight:4,opacity:.8,dashArray:"8 7"}).addTo(m);
+ m.fitBounds(L.latLngBounds(pts.map(p=>p.xy)),{padding:[30,30],maxZoom:15});
+ return m;
+}
+const d1=[
+{n:"Oslo S",xy:[59.9110,10.7528],c:C.green,a:"Oslo Central Station",t:"起點"},
+{n:"MUNCH",xy:[59.9075,10.7536],c:C.red,a:"Edvard Munchs plass 1, Oslo",t:"15:20–17:30"},
+{n:"Fiskeriet",xy:[59.9073,10.7520],c:C.gold,a:"Operagata 69b, Oslo",t:"17:40–18:45"},
+{n:"Deichman",xy:[59.9078,10.7530],c:C.blue,a:"Anne-Cath. Vestlys plass 1, Oslo",t:"18:45–19:15"},
+{n:"Opera House",xy:[59.9070,10.7532],c:C.blue,a:"Kirsten Flagstads Plass 1, Oslo",t:"19:15–19:45"}];
+makeMap("map1",d1,d1.map(x=>x.xy),C.blue);
+
+const shops=[
+{n:"CHANEL",xy:[59.91165,10.74095],c:C.gold,a:"Nedre Slottsgate 10, Oslo",t:"10:00–10:40"},
+{n:"Louis Vuitton",xy:[59.91210,10.74095],c:C.gold,a:"Karl Johans gate 16C, Oslo",t:"10:40–11:20"},
+{n:"Arc'teryx",xy:[59.91275,10.74070],c:C.blue,a:"Karl Johans gt. 21, Oslo",t:"11:20–11:45"},
+{n:"Helly Hansen",xy:[59.91235,10.74410],c:C.blue,a:"Karl Johans gt. 3, Oslo",t:"11:45–12:05"},
+{n:"Acne Studios",xy:[59.91195,10.74070],c:C.gold,a:"Øvre Slottsgate 11, Oslo",t:"12:05–12:30"},
+{n:"COS",xy:[59.91200,10.74060],c:C.gold,a:"Øvre Slottsgate 10, Oslo",t:"12:30–12:50"},
+{n:"ZARA",xy:[59.91190,10.74055],c:C.gold,a:"Øvre Slottsgate 12, Oslo",t:"12:50–13:10"},
+{n:"Market Day START",xy:[59.9164,10.7298],c:C.green,a:"Parkveien / Hegdehaugsveien, Oslo",t:"13:35 進場"}];
+makeMap("mapshop",shops,shops.map(x=>x.xy),C.gold);
+
+const d2=[
+{n:"City Hall",xy:[59.9113,10.7330],c:C.red,a:"Rådhusplassen 1, Oslo",t:"09:00–09:40"},
+...shops,
+{n:"Vinkelplassen",xy:[59.9294,10.7158],c:C.green,a:"Kirkeveien 59, Oslo",t:"15:25–15:45"},
+{n:"Royal Palace",xy:[59.9169,10.7276],c:C.red,a:"Royal Palace, Oslo",t:"15:45–16:10"},
+{n:"Nobel Peace Center",xy:[59.9110,10.7298],c:C.red,a:"Brynjulf Bulls plass 1, Oslo",t:"16:20–16:55"},
+{n:"Akershus Fortress",xy:[59.9075,10.7365],c:C.red,a:"Akershus festning, Oslo",t:"17:05–18:15"},
+{n:"Aker Brygge",xy:[59.9090,10.7260],c:C.blue,a:"Aker Brygge, Oslo",t:"18:15–19:00"},
+{n:"Tjuvholmen",xy:[59.9085,10.7230],c:C.blue,a:"Tjuvholmen, Oslo",t:"BONUS"}];
+makeMap("map2",d2,d2.map(x=>x.xy),C.blue);
+
+const d3=[
+{n:"Oslo S",xy:[59.9110,10.7528],c:C.green,a:"Oslo Central Station",t:"09:00"},
+{n:"Aker Brygge",xy:[59.9090,10.7260],c:C.blue,a:"Aker Brygge ferry terminal, Oslo",t:"09:30"},
+{n:"Hovedøya",xy:[59.8958,10.7305],c:C.green,a:"Hovedøya, Oslo",t:"10:00–11:45"},
+{n:"Tim Wendelboe",xy:[59.9222,10.7535],c:C.gold,a:"Grüners gate 1, Oslo",t:"12:30–13:15"},
+{n:"Grünerløkka",xy:[59.9228,10.7520],c:C.blue,a:"Grünerløkka, Oslo",t:"13:15–14:30"},
+{n:"Birkelunden",xy:[59.9258,10.7580],c:C.green,a:"Birkelunden, Oslo",t:"BONUS"},
+{n:"Vulkanfisk",xy:[59.9237,10.7527],c:C.gold,a:"Vulkan 5, Oslo",t:"15:30–16:30"}];
+makeMap("map3",d3,d3.map(x=>x.xy),C.green);
+</script>
+</body></html>

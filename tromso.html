@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tromsø V6.0｜極致 J 人美食打卡版｜9/7–9/9</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#f5f2ea;--card:#fffdf8;--ink:#172522;--muted:#68736f;--blue:#496b76;--green:#405b4b;--red:#a4473b;--gold:#a87938;--line:#ddd8cd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55}
+.hero{background:linear-gradient(135deg,#e7e1d4,#dce8e7 65%,#f5f2ea);padding:28px 16px;border-bottom:1px solid var(--line)}.wrap{max-width:940px;margin:auto;padding:0 14px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--blue)}h1{font-size:31px;line-height:1.12;margin:8px 0}.hero p{margin:0;color:#53615d;font-size:13px}
+.tabs{position:sticky;top:0;z-index:1000;background:#f5f2eaf2;backdrop-filter:blur(12px);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}.tabs a{white-space:nowrap;text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fffaf1;font-size:12px;font-weight:900}
+.section{margin:24px 0}.title{display:flex;justify-content:space-between;align-items:end;gap:10px}.title h2{font-size:21px;margin:0}.title small{color:var(--muted);font-size:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 10px 28px #26372d0b}
+.notice{background:#eaf0ee;border-left:4px solid var(--green);padding:12px 13px;border-radius:10px;font-size:12px;margin-top:14px}
+.timeline{position:relative;margin-top:8px;padding-left:17px}.timeline:before{content:"";position:absolute;left:6px;top:12px;bottom:10px;width:2px;background:#d2d8d5}.stop{position:relative;padding:0 0 18px 17px}.stop:before{content:"";position:absolute;left:-1px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.time{font-size:12px;font-weight:900;color:var(--blue)}.stop h3{font-size:15px;margin:2px 0; display:flex; align-items:center;}.meta{font-size:11px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#edf0eb;font-weight:900}.tag.red{background:#f4e2df;color:#8b382f}.tag.gold{background:#f1e6d3;color:#79531e}.tag.blue{background:#e3ecef;color:#385d68}.tag.green{background:#ecfdf5;color:#047857}
+.map{height:400px;border-radius:17px;overflow:hidden;border:1px solid var(--line); margin-bottom: 15px;}.map-note{font-size:10px;color:var(--muted);margin-top:6px}
+.grid{display:grid;gap:10px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.map{height:500px}h1{font-size:42px}}
+table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:10px;color:var(--muted)}
+.alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px}.alert.green{background:#e9f0eb;border-left-color:var(--green)}
+.step-num {display:inline-block; width:20px; height:20px; background:var(--blue); color:#fff; border-radius:50%; text-align:center; line-height:20px; font-size:12px; margin-right:6px; font-weight:900; flex-shrink:0;}
+.res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
+footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="kicker">TROMSØ V6.0 · 7–9 SEP 2026</div>
+<h1>🇳🇴 Tromsø｜極致 J 人導航與餐廳標註版</h1>
+<p>9/7 Casa Inferno 與微醺熱狗 · 9/8 證書與 Risø · 9/9 麥當勞與 Fiskekompaniet</p>
+<div class="notice"><b>V6.0 更新重點：</b>依照您的指示，Day 2 晚餐改為「自由安排 (不安排特定餐廳)」，Day 3 晚餐更換為頂級海鮮名店 <b>Fiskekompaniet</b>。行程文字的編號 ❶ ❷ ❸ 與地圖 Marker 數字依然保持 100% 吻合！</div>
+</div></header>
+
+<div class="wrap">
+<nav class="tabs"><a href="index.html">🏠 首頁</a><a href="#d1">9/7 (DAY 1)</a><a href="#d2">9/8 (DAY 2)</a><a href="#d3">9/9 (DAY 3)</a><a href="#fares">📌 交通與票券</a></nav>
+
+<section id="d1" class="section">
+<div class="title"><h2>🛬 DAY 1｜9/7 Mon</h2><small>落地安頓＋義式蒸氣龐克</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">13:40–15:30</div><h3><span class="step-num" style="background:var(--red)">1</span> 🛩️ TOS 機場 (SK4418 抵達)</h3><div class="meta">班機 15:30 落地，提領行李後搭乘 Flybussen 快速進市區。</div></div>
+<div class="stop"><div class="time">16:40–17:15</div><h3><span class="step-num">2</span> 🏨 Clarion Hotel The Edge</h3><div class="meta">Kaigata 6。辦理入住，放下行李，作為這三天的基地。</div></div>
+<div class="stop"><div class="time">17:15–18:00</div><h3><span class="step-num" style="background:var(--gold)">3</span> 🌭 Raketten Bar & Pølse</h3><div class="meta">這是挪威最小的酒吧！點一份「馴鹿熱狗堡 (Reindeer Hot Dog)」配熱紅酒。<div class="res-box"><b>⚠️ 預約規定：</b>街頭吧檯形式，<b>無需預約</b>，直接現場排隊點餐即可。</div></div><div class="tags"><span class="tag gold">⭐ 指定餐廳</span></div></div>
+<div class="stop"><div class="time">18:30–20:00</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍕 晚餐：Casa Inferno</h3><div class="meta">Vestregata 38。超高人氣的蒸氣龐克風 (Steampunk) 義式披薩餐廳，氣氛極佳！<div class="res-box"><b>⚠️ 預約規定：</b>人氣極高，晚餐時段強烈建議<b>提前上網預約</b>以免向隅。</div></div><div class="tags"><span class="tag gold">⭐ 指定餐廳</span><span class="tag red">需預約</span></div></div>
+<div class="stop"><div class="time">20:30–23:30</div><h3 style="padding-left:26px;">🌌 自由活動／極光觀測</h3><div class="meta" style="padding-left:26px;">9/7 月亮亮度約 18%。可在飯店附近散步並監控極光指數。</div></div>
+</div></div>
+<div id="map1" class="map"></div>
+<div class="map-note">Day 1 地圖：編號對應上方行程，1 機場 ➔ 2 飯店 ➔ 3 熱狗吧 ➔ 4 Casa Inferno 披薩。</div>
+</section>
+
+<section id="d2" class="section">
+<div class="title"><h2>🏛️ DAY 2｜9/8 Tue</h2><small>北極圈證書＋質感午餐</small></div>
+<div class="alert green">
+  <b>Day 2 晚餐彈性化：</b>今天移除指定晚餐，讓您在走完市區精華後，能自由在 Storgata (主街) 挑選餐廳或稍作休息，為極光主力夜保留最高彈性。
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">08:30–09:10</div><h3><span class="step-num">1</span> 🏨 Clarion Hotel The Edge</h3><div class="meta">在飯店悠閒吃完早餐後出發。</div></div>
+<div class="stop"><div class="time">09:15–09:45</div><h3><span class="step-num" style="background:var(--red)">2</span> 📜 Visit Tromsø 遊客中心</h3><div class="meta">Storgata 83。09:00 開門。花費 200 NOK 購買官方燙金並蓋有專屬郵戳的<b>「北極圈證書」</b>！</div><div class="tags"><span class="tag red">🔴 必解任務</span></div></div>
+<div class="stop"><div class="time">10:00–12:00</div><h3><span class="step-num">3</span> 🦭 Polaria (極地水族館)</h3><div class="meta">Hjalmar Johansens gate 12。領完證書後漫步過去，觀賞海豹餵食秀。（門票約 395 NOK）</div></div>
+<div class="stop"><div class="time">12:15–13:30</div><h3><span class="step-num" style="background:var(--gold)">4</span> ☕ Risø mat og kaffebar</h3><div class="meta">Strandgata 32。Tromsø 最棒的精品咖啡店！必嚐手沖咖啡與在地開放式三明治。<div class="res-box"><b>⚠️ 預約規定：</b>雖為咖啡館，但在旅遊旺季用餐尖峰仍<b>建議提前預約</b>確保座位。</div></div><div class="tags"><span class="tag gold">⭐ 指定餐廳</span></div></div>
+<div class="stop"><div class="time">13:45–15:15</div><h3><span class="step-num">5</span> 🐻 Polar Museum (極地博物館)</h3><div class="meta">Søndre Tollbodgate 11。深入了解北極探險與狩獵歷史。（門票約 130 NOK）</div></div>
+<div class="stop"><div class="time">15:30–17:00</div><h3><span class="step-num" style="background:var(--green)">6</span> ⛪ Tromsø Cathedral</h3><div class="meta">回到市區中心，欣賞木造主教座堂並在周邊採買紀念品。</div></div>
+<div class="stop"><div class="time">18:00–20:00</div><h3><span class="step-num" style="background:var(--gold)">7</span> 🍽️ 晚餐：市區自由安排</h3><div class="meta">取消原定餐廳，今晚讓肚子休息一下，或在主街 (Storgata) 隨意挑選喜歡的小店。</div><div class="tags"><span class="tag gold">彈性時間</span></div></div>
+<div class="stop"><div class="time">20:30–00:30</div><h3 style="padding-left:26px;">🌌 極光主力夜</h3><div class="meta" style="padding-left:26px;">9/8 月亮僅約 9.9%，此行最暗的夜晚。</div></div>
+</div></div>
+<div id="map2" class="map"></div>
+<div class="map-note">Day 2 地圖：1 飯店 ➔ 2 遊客中心領證書 ➔ 3 水族館 ➔ 4 Risø 午餐 ➔ 5 博物館 ➔ 6 教堂 ➔ 7 市區自由晚餐。</div>
+</section>
+
+<section id="d3" class="section">
+<div class="title"><h2>⛰️ DAY 3｜9/9 Wed</h2><small>極北麥當勞＋頂級海鮮</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">08:45–09:45</div><h3><span class="step-num">1</span> ⛪ Arctic Cathedral (北極教堂)</h3><div class="meta">吃完早餐後跨越跨海大橋，抵達著名的三角形地標教堂。</div></div>
+<div class="stop"><div class="time">10:00–11:30</div><h3><span class="step-num" style="background:var(--green)">2</span> 🧗 Sherpatrappa 健行入口</h3><div class="meta">沿著石階步道爬升至 Fløya 山頂。</div></div>
+<div class="stop"><div class="time">11:30–12:30</div><h3><span class="step-num" style="background:var(--blue)">3</span> 🚠 Fjellheisen 頂站纜車</h3><div class="meta">享受峽灣全景後，搭乘纜車輕鬆下山回到市區。</div></div>
+<div class="stop"><div class="time">13:00–13:45</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍔 McDonald's Tromsø</h3><div class="meta">Storgata 78。J 人極致效率！打卡世界最北端的麥當勞之一，速戰速決爭取時間。<div class="res-box"><b>⚠️ 預約規定：</b>速食餐廳，<b>免預約</b>直接點餐入座。</div></div><div class="tags"><span class="tag gold">⭐ 指定餐廳</span><span class="tag green">免預約</span></div></div>
+<div class="stop"><div class="time">14:00–15:30</div><h3><span class="step-num" style="background:var(--green)">5</span> 🌊 Telegrafbukta (北極海灘)</h3><div class="meta">搭公車前往島南端海灘，欣賞靜謐的北極海與山景。</div></div>
+<div class="stop"><div class="time">16:00–17:30</div><h3><span class="step-num" style="background:var(--gold)">6</span> 🧖 Pust Sauna Tromsø</h3><div class="meta">港邊漂浮桑拿。強烈建議預約 60 分鐘時段。（約 150 NOK 起）</div></div>
+<div class="stop"><div class="time">18:00–19:30</div><h3><span class="step-num" style="background:var(--gold)">7</span> 🦀 晚餐：Fiskekompaniet</h3><div class="meta">Killengrens gate。此行最後一晚，享用 Tromsø 評價極高的頂級海鮮大餐！<div class="res-box"><b>⚠️ 預約規定：</b>極熱門海鮮名店，<b>務必事先上網預約</b>。</div></div><div class="tags"><span class="tag gold">⭐ 指定餐廳</span><span class="tag red">需預約</span></div></div>
+</div></div>
+<div id="map3" class="map"></div>
+<div class="map-note">Day 3 地圖：1 北極教堂 ➔ 2 健行起點 ➔ 3 山頂纜車 ➔ 4 麥當勞 ➔ 5 北極海灘 ➔ 6 桑拿 ➔ 7 Fiskekompaniet 晚餐。</div>
+</section>
+
+<section id="fares" class="section">
+<div class="title"><h2>📌 餐廳預約總結</h2></div>
+<div class="card">
+<ul>
+  <li><b>Casa Inferno:</b> 必須預約。</li>
+  <li><b>Raketten Bar & Pølse:</b> 街邊吧檯，免預約。</li>
+  <li><b>Risø mat og kaffebar:</b> 旺季建議預約。</li>
+  <li><b>McDonald's Tromsø:</b> 免預約。</li>
+  <li><b>Fiskekompaniet:</b> 頂級海鮮名店，強烈建議提早預約。</li>
+</ul>
+</div>
+</section>
+
+<footer>
+資料核對基準日：2026-08-23。地圖底圖 © OpenStreetMap contributors / Leaflet。點擊 Marker 上的連結可直接啟動 Google Maps 導航。
+</footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const C={blue:"#496b76",green:"#405b4b",red:"#a4473b",gold:"#a87938"};
+function makeMap(id,pts,color=C.blue){
+ const m=L.map(id,{scrollWheelZoom:true,zoomControl:true}).setView(pts[0].xy,14);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(m);
+ pts.forEach((p,i)=>{
+  const ic=L.divIcon({className:"pin",html:`<div style="width:30px;height:30px;border-radius:50%;background:${p.c||color};border:3px solid #fff;box-shadow:0 2px 8px #0005;color:#fff;font-weight:900;font-size:11px;display:grid;place-items:center">${i+1}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
+  L.marker(p.xy,{icon:ic}).addTo(m).bindPopup(`<b>${p.n}</b><br><span style="font-size:11px">${p.t||""}</span><br><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.a||p.n)}">↗ 啟動 Google Maps 導航</a>`);
+ });
+ m.fitBounds(L.latLngBounds(pts.map(p=>p.xy)),{padding:[30,30],maxZoom:15});
+ return m;
+}
+
+// Day 1
+const d1=[
+{n:"TOS 機場",xy:[69.6833,18.9167],c:C.red,a:"Tromsø Airport, Langnes",t:"1 落地 15:30"},
+{n:"Clarion Hotel The Edge",xy:[69.6480,18.9592],c:C.blue,a:"Kaigata 6, Tromso",t:"2 住宿點"},
+{n:"Raketten Bar & Pølse",xy:[69.6492,18.9575],c:C.gold,a:"Storgata 71B, Tromso",t:"3 馴鹿熱狗 17:15"},
+{n:"Casa Inferno",xy:[69.6506,18.9577],c:C.gold,a:"Vestregata 38, Tromso",t:"4 披薩晚餐 18:30"}
+];
+makeMap("map1",d1,C.blue);
+
+// Day 2
+const d2=[
+{n:"Clarion Hotel The Edge",xy:[69.6480,18.9592],c:C.blue,a:"Kaigata 6, Tromso",t:"1 出發點"},
+{n:"Visit Tromsø",xy:[69.6506,18.9546],c:C.red,a:"Storgata 83, Tromso",t:"2 北極圈證書 09:15"},
+{n:"Polaria",xy:[69.6439,18.9500],c:C.blue,a:"Polaria, Tromso",t:"3 水族館 10:00"},
+{n:"Risø Mat & Kaffebar",xy:[69.6489,18.9577],c:C.gold,a:"Strandgata 32, Tromso",t:"4 精品咖啡午餐 12:15"},
+{n:"Polar Museum",xy:[69.6521,18.9635],c:C.blue,a:"Polar Museum, Tromso",t:"5 極地博物館 13:45"},
+{n:"Tromsø Cathedral",xy:[69.6489,18.9567],c:C.green,a:"Tromsø domkirke",t:"6 教堂與逛街"},
+{n:"市區自由晚餐",xy:[69.6495,18.9565],c:C.gold,a:"Storgata, Tromso",t:"7 晚餐 18:00"}
+];
+makeMap("map2",d2,C.green);
+
+// Day 3
+const d3=[
+{n:"Arctic Cathedral",xy:[69.6481,18.9875],c:C.blue,a:"Arctic Cathedral",t:"1 北極教堂 08:45"},
+{n:"Sherpatrappa 入口",xy:[69.6417,18.9917],c:C.green,a:"Sherpatrappa, Tromso",t:"2 健行起點 10:00"},
+{n:"Fjellheisen 頂站",xy:[69.6389,19.0111],c:C.blue,a:"Fjellheisen Øvre stasjon",t:"3 山頂纜車"},
+{n:"McDonald's Tromsø",xy:[69.6497,18.9559],c:C.gold,a:"Storgata 78, Tromso",t:"4 極北麥當勞打卡 13:00"},
+{n:"Telegrafbukta",xy:[69.6317,18.9217],c:C.green,a:"Telegrafbukta, Tromso",t:"5 北極海灘 14:00"},
+{n:"Pust Sauna",xy:[69.6472,18.9556],c:C.gold,a:"Pust Sauna Tromsø",t:"6 桑拿 16:00"},
+{n:"Fiskekompaniet",xy:[69.6496,18.9604],c:C.gold,a:"Fiskekompaniet Tromsø",t:"7 海鮮晚餐 18:00"}
+];
+makeMap("map3",d3,C.gold);
+</script>
+</body></html>
