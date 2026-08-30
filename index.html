@@ -16,6 +16,7 @@
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 34px #26372d15}
 .card h2{font-size:20px;margin:0 0 8px;color:var(--blue)}
 .card .date{font-size:12px;font-weight:900;color:var(--gold);margin-bottom:8px;display:inline-block;background:#f1e6d3;padding:3px 8px;border-radius:999px}
+.card .base{font-size:11px;font-weight:900;color:var(--green);margin-bottom:8px;display:block;background:#e9f0eb;padding:3px 8px;border-radius:6px;border-left:3px solid var(--green)}
 .card p{margin:0;font-size:13px;color:var(--muted)}
 footer{text-align:center;padding:30px 0 50px;color:var(--muted);font-size:11px}
 </style>
@@ -29,38 +30,69 @@ footer{text-align:center;padding:30px 0 50px;color:var(--muted);font-size:11px}
 
 <div class="wrap">
 <div class="section">
+<div class="card" style="border-left:4px solid var(--gold)">
+  <h2>🔴 已確認預約／硬時間</h2>
+  <p><b>9/7 19:00</b> Casa Inferno（2人）｜<b>9/9 18:30</b> Fiskekompaniet（2人）｜<b>9/10 11:00</b> SIXT 取車｜<b>9/12 08:30</b> SIXT 還車｜<b>9/16 16:00–18:00</b> Löyly Sauna（男1＋女1，Booking 255315）</p>
+</div>
 <div class="card-grid">
 
-  <!-- 檔案一：Oslo -->
+  <!-- 行程 01：航班 -->
   <a href="oslo.html" class="card">
-    <span class="date">9/4 – 9/6</span>
-    <h2>🇳🇴 Oslo 奧斯陸</h2>
-    <p>MUNCH、精市集、市中心精品購物與 Hovedøya 峽灣小島散步。</p>
+    <span class="date">01 · 9/3 – 9/4</span>
+    <span class="base">🏨 住宿基地：機上 / 機場轉機</span>
+    <h2>✈️ 台北 → 杜拜 → 奧斯陸</h2>
+    <p>9/3 00:30 EK387 台北出發 → 9/4 05:15 抵達杜拜；07:30 EK159 → 12:35 抵達 Oslo。含轉機、入境、領行李與前往 Citybox Oslo 的第一天銜接。</p>
   </a>
 
-  <!-- 檔案二：Rovaniemi -->
+  <!-- 行程 02：Oslo -->
+  <a href="oslo.html" class="card">
+    <span class="date">02 · 9/4 – 9/6</span>
+    <span class="base">🏨 住宿基地：Citybox Oslo</span>
+    <h2>🇳🇴 Oslo 奧斯陸</h2>
+    <p>住宿：Citybox Oslo（9/4 入住 → 9/7 退房）；MUNCH、精市集、市中心精品購物與 Hovedøya 峽灣小島散步。</p>
+  </a>
+
+  <!-- 行程 03：Tromsø -->
+  <a href="tromso.html" class="card">
+    <span class="date">03 · 9/7 – 9/9</span>
+    <span class="base">🏨 住宿基地：Clarion Hotel The Edge</span>
+    <h2>🇳🇴 Tromsø 特羅姆瑟</h2>
+    <p>北極圈證書、蒸氣龐克披薩、極光主力夜與頂級海鮮大餐；9/7 19:00 Casa Inferno、9/9 18:30 Fiskekompaniet。</p>
+  </a>
+
+  <!-- 行程 04：Tromsø & Senja -->
+  <a href="senja.html" class="card">
+    <span class="date">04 · 9/10 – 9/12</span>
+    <span class="base">🏨 住宿基地：Sommarøy Arctic Hotel (9/10) → Moxy Tromsø (9/11)</span>
+    <h2>🚗 Tromsø & Senja 自駕跳島</h2>
+    <p>9/10 SIXT 11:00 Tromsø Airport 取車、Sommarøy；9/11 Senja 景觀公路；9/12 08:30 Tromsø Airport 還車後前往 Rovaniemi。</p>
+  </a>
+
+  <!-- 行程 05：Rovaniemi -->
   <a href="rovaniemi.html" class="card">
-    <span class="date">9/12 – 9/15</span>
+    <span class="date">05 · 9/12 – 9/15</span>
+    <span class="base">🏨 住宿基地：Apukka Resort</span>
     <h2>🇫🇮 Rovaniemi 羅瓦涅米</h2>
     <p>聖誕老人村、極光渡假村、森林健行與炭烤鮭魚小屋。</p>
   </a>
 
-  <!-- 檔案三：Tromsø -->
-  <a href="tromso.html" class="card">
-    <span class="date">9/7 – 9/9</span>
-    <h2>🇳🇴 Tromsø 特羅姆瑟</h2>
-    <p>北極圈證書、蒸氣龐克披薩、極光主力夜與頂級海鮮大餐。</p>
+  <!-- 行程 06：Helsinki -->
+  <a href="helsinki.html" class="card">
+    <span class="date">06 · 9/15 – 9/16</span>
+    <span class="base">🏨 住宿基地：Helsinki 市區飯店</span>
+    <h2>🇫🇮 Helsinki 赫爾辛基</h2>
+    <p>Löyly Helsinki 海邊公共桑拿：16:00–18:00；男側 1 人＋女側 1 人；Booking No. 255315。</p>
   </a>
 
-  <!-- 檔案四：Tromsø & Senja -->
-  <a href="senja.html" class="card">
-    <span class="date">9/10 – 9/11</span>
-    <h2>🇳🇴 Tromsø & Senja 自駕跳島</h2>
-    <p>峽灣自駕、夏之島白沙灘、滾裝渡輪與國家景觀公路秘境。</p>
+  <!-- 全程注意事項 -->
+  <a href="trip-notes.html" class="card">
+    <span class="date">📌 全程必讀</span>
+    <span class="base">🏨 含全程每日住宿基地記錄表</span>
+    <h2>行程注意事項</h2>
+    <p>每日住宿基地記錄、航班、落地交通、票券、接駁、自駕、極光、預約與各日不可踩雷事項一次整理。</p>
   </a>
 
-</div>
-</div>
+</div></div>
 </div>
 
 <footer>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Helsinki｜極致 J 人終極篇｜2026/9/15–9/18</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#f5f2ea;--card:#fffdf8;--ink:#172522;--muted:#68736f;--blue:#496b76;--green:#405b4b;--red:#a4473b;--gold:#a87938;--line:#ddd8cd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55}
+.hero{background:linear-gradient(135deg,#e7e1d4,#dce8e7 65%,#f5f2ea);padding:28px 16px;border-bottom:1px solid var(--line)}.wrap{max-width:940px;margin:auto;padding:0 14px}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--blue)}h1{font-size:31px;line-height:1.12;margin:8px 0}.hero p{margin:0;color:#53615d;font-size:13px}
+.tabs{position:sticky;top:0;z-index:1000;background:#f5f2eaf2;backdrop-filter:blur(12px);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}.tabs a{white-space:nowrap;text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fffaf1;font-size:12px;font-weight:900;color:inherit}
+.section{margin:24px 0}.title{display:flex;justify-content:space-between;align-items:end;gap:10px}.title h2{font-size:21px;margin:0}.title small{color:var(--muted);font-size:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 10px 28px #26372d0b}
+.notice{background:#eaf0ee;border-left:4px solid var(--green);padding:12px 13px;border-radius:10px;font-size:12px;margin-top:14px}
+.timeline{position:relative;margin-top:8px;padding-left:17px}.timeline:before{content:"";position:absolute;left:6px;top:12px;bottom:10px;width:2px;background:#d2d8d5}.stop{position:relative;padding:0 0 18px 17px}.stop:before{content:"";position:absolute;left:-1px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}.time{font-size:12px;font-weight:900;color:var(--blue)}.stop h3{font-size:15px;margin:2px 0; display:flex; align-items:center;}.meta{font-size:11px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#edf0eb;font-weight:900}.tag.red{background:#f4e2df;color:#8b382f}.tag.gold{background:#f1e6d3;color:#79531e}.tag.blue{background:#e3ecef;color:#385d68}.tag.green{background:#ecfdf5;color:#047857}
+.map{height:400px;border-radius:17px;overflow:hidden;border:1px solid var(--line); margin-bottom: 15px;}.map-note{font-size:10px;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:10px;color:var(--muted)}
+.alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px; margin-bottom:10px;}.alert.green{background:#e9f0eb;border-left-color:var(--green)}
+.step-num {display:inline-block; width:20px; height:20px; background:var(--blue); color:#fff; border-radius:50%; text-align:center; line-height:20px; font-size:12px; margin-right:6px; font-weight:900; flex-shrink:0;}
+.res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
+footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="kicker">FINLAND · HELSINKI · 15–18 SEP 2026</div>
+<h1>🇫🇮 赫爾辛基｜極致 J 人終極篇</h1>
+<p><b>🏨 住宿基地：Helsinki 市區飯店 (9/15 入住 → 9/18 退房，共 3 晚)</b></p>
+<p>9/15 抵達＋舊農貿市場 ➔ 9/16 芬蘭設計、岩石教堂與 Löyly 桑拿 ➔ 9/17 芬蘭堡歷史巡禮 ➔ 9/18 離境搭乘 AY41</p>
+<div class="notice"><b>行程亮點：</b>已精準整合 9/16 16:00–18:00 Löyly 桑拿，並安排 Cafe Ekberg 經典肉桂捲、Lappi 拉普蘭風味餐與芬蘭堡渡輪，最後於 9/18 14:30 順暢前往 HEL 機場搭乘 17:30 AY41 航班。</div>
+</div></header>
+
+<div class="wrap">
+<nav class="tabs">
+<a href="index.html">🏠 首頁</a>
+<a href="#d1">9/15 (二)</a>
+<a href="#d2">9/16 (三)</a>
+<a href="#d3">9/17 (四)</a>
+<a href="#d4">9/18 (五) ✈️</a>
+<a href="trip-notes.html">⚠️ 注意事項</a>
+</nav>
+
+<!-- 住宿基地卡片 -->
+<section class="section">
+<div class="card"><div class="title"><h2>🏨 本區住宿基地｜Helsinki 市區飯店</h2><small>9/15 Check-in ➔ 9/18 Check-out｜3 晚</small></div>
+<p><b>建議選址：</b>赫爾辛基中央車站 (Helsinki Central Station) 或 Esplanadi 公園周邊。</p>
+<p><b>優勢：</b>從 Rovaniemi 移動抵達後可快速寄行李，且前往 HSL 地鐵、路面電車、渡輪碼頭與 9/18 機場快線（I/P Train）均在步行圈內。</p>
+</div>
+</section>
+
+<!-- Day 1 -->
+<section id="d1" class="section">
+<div class="title"><h2>🛬 DAY 1｜9/15 Tue</h2><small>住宿基地：Helsinki 市區飯店</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">12:30–13:30</div><h3><span class="step-num" style="background:var(--blue)">1</span> 🚆 抵達赫爾辛基 ➔ 飯店寄放行李</h3><div class="meta">搭乘火車或航班抵達赫爾辛基，先前往<b>住宿基地：Helsinki 市區飯店</b>辦理寄存行李。</div></div>
+
+<div class="stop"><div class="time">14:00–15:30</div><h3><span class="step-num" style="background:var(--gold)">2</span> 🥐 午茶：Cafe Ekberg 1852</h3><div class="meta">Bulevardi 9。芬蘭歷史最悠久的咖啡館，必點傳統肉桂捲 (Korvapuusti) 與優質手沖。</div><div class="tags"><span class="tag gold">⭐ 經典老店</span></div></div>
+
+<div class="stop"><div class="time">15:45–17:30</div><h3><span class="step-num" style="background:var(--green)">3</span> 🏛️ 赫爾辛基主教座堂 ＆ 議會廣場</h3><div class="meta">Unioninkatu 29。經典白教堂建築，地標打卡必訪。</div></div>
+
+<div class="stop"><div class="time">18:00–20:00</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍽️ 晚餐：Restaurant Savotta</h3><div class="meta">Aleksanterinkatu 22（教堂旁）。主打芬蘭傳統森林與湖泊料理（如帝王蟹、鹿肉），充滿懷舊鄉村氛圍。<div class="res-box"><b>⚠️ 建議：</b>熱門景點區餐廳，建議提前網路預約。</div></div><div class="tags"><span class="tag gold">⭐ 傳統芬蘭菜</span></div></div>
+
+<div class="stop"><div class="time">20:15</div><h3><span class="step-num" style="background:var(--blue)">5</span> 🏨 返回住宿基地</h3><div class="meta">步行返回 <b>Helsinki 市區飯店</b> 辦理 Check-in，休息充電。</div></div>
+</div></div>
+<div id="map1" class="map"></div>
+<div class="map-note">Day 1 地圖：1 住宿基地 ➔ 2 Cafe Ekberg ➔ 3 白教堂 ➔ 4 Savotta 晚餐。</div>
+</section>
+
+<!-- Day 2 -->
+<section id="d2" class="section">
+<div class="title"><h2>🧖 DAY 2｜9/16 Wed</h2><small>住宿基地：Helsinki 市區飯店</small></div>
+<div class="alert green">
+  <b>已確認預約：Löyly Sauna 16:00–18:00</b>（Booking No. 255315，男1+女1）。預計 15:30 抵達現場。
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">09:00–10:30</div><h3><span class="step-num" style="background:var(--green)">1</span> ⛪ Temppeliaukio Rock Church (岩石教堂)</h3><div class="meta">Lutherinkatu 3。直接開鑿於岩石中的現代建築奇蹟。（門票約 €8）</div></div>
+
+<div class="stop"><div class="time">11:00–12:30</div><h3><span class="step-num" style="background:var(--blue)">2</span> 🎨 Design District 芬蘭設計街區</h3><div class="meta">探索 Punavuori 區域，採買 Marimekko, Iittala, Artek 等設計名店。</div></div>
+
+<div class="stop"><div class="time">12:30–14:00</div><h3><span class="step-num" style="background:var(--gold)">3</span> 🐟 午餐：Old Market Hall (老農貿市場)</h3><div class="meta">Eteläranta。必吃 <b>Soppakeittiö</b> 濃郁海鮮湯 (Salmon Soup) 搭配新鮮軟法。</div><div class="tags"><span class="tag gold">⭐ 必吃鮭魚湯</span></div></div>
+
+<div class="stop"><div class="time">14:15–15:15</div><h3><span class="step-num" style="background:var(--blue)">4</span> ⛪ 烏斯佩斯基大教堂 (紅教堂)</h3><div class="meta">Kanavakatu 1。北歐最大的東正教堂，雄偉的紅磚金頂建築。</div></div>
+
+<div class="stop"><div class="time">15:30–18:00</div><h3><span class="step-num" style="background:var(--red)">5</span> 🧖 Löyly Helsinki 海邊桑拿</h3><div class="meta">Hernesaarenranta 4。<b>預約時間：16:00–18:00</b> (Booking 255315)。請於 15:30 抵達更衣準備，桑拿後可直接跳入北極海冷卻！</div><div class="tags"><span class="tag red">🔴 核心預約 (16:00)</span></div></div>
+
+<div class="stop"><div class="time">18:30–20:30</div><h3><span class="step-num" style="background:var(--gold)">6</span> 🍽️ 晚餐：Restaurant Lappi</h3><div class="meta">Annankatu 22。桑拿結束後搭 Tram 返回市區，享用傳統拉普蘭嫩煎燉鹿肉 (Reindeer Sauté)。<div class="res-box"><b>⚠️ 建議：</b>拉普蘭名店，請提前 1–2 週預約。</div></div><div class="tags"><span class="tag gold">⭐ 極致拉普蘭風味</span></div></div>
+</div></div>
+<div id="map2" class="map"></div>
+<div class="map-note">Day 2 地圖：1 岩石教堂 ➔ 2 設計區 ➔ 3 老市場 ➔ 4 紅教堂 ➔ 5 Löyly 桑拿 ➔ 6 Lappi 晚餐。</div>
+</section>
+
+<!-- Day 3 -->
+<section id="d3" class="section">
+<div class="title"><h2>🏰 DAY 3｜9/17 Thu</h2><small>住宿基地：Helsinki 市區飯店</small></div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">09:00–09:30</div><h3><span class="step-num" style="background:var(--blue)">1</span> ⛴️ 集市廣場碼頭 (Kauppatori) ➔ 搭乘渡輪</h3><div class="meta">使用 HSL 交通票搭乘官方渡輪（約 15–20 分鐘車程）前往芬蘭堡。</div></div>
+
+<div class="stop"><div class="time">09:30–12:30</div><h3><span class="step-num" style="background:var(--green)">2</span> 🏰 Suomenlinna (芬蘭堡海上要塞)</h3><div class="meta">聯合國教科文組織世界文化遺產。沿藍色健行路線探索古砲台、國王門與海岸防線。</div></div>
+
+<div class="stop"><div class="time">13:00–14:30</div><h3><span class="step-num" style="background:var(--gold)">3</span> 🍽️ 午餐：Ravintola Alderfelt (芬蘭堡內)</h3><div class="meta">芬蘭堡島上的精緻老宅餐廳，享用北歐當季食材午餐套餐。</div></div>
+
+<div class="stop"><div class="time">15:00–17:00</div><h3><span class="step-num" style="background:var(--blue)">4</span> 📚 Oodi 中央圖書館 & 康比靜謐教堂</h3><div class="meta">搭渡輪返回市區，造訪獲選世界最美之一的 Oodi 圖書館與木造 Kamppi Chapel。</div></div>
+
+<div class="stop"><div class="time">18:00–20:00</div><h3><span class="step-num" style="background:var(--gold)">5</span> 🍽️ 晚餐：Nokka</h3><div class="meta">Kanavaranta 7F。座落於舊港口倉庫的北歐新派料理，主打頂級在地有機食材與葡萄酒搭配。</div><div class="tags"><span class="tag gold">⭐ 港區頂級饗宴</span></div></div>
+</div></div>
+<div id="map3" class="map"></div>
+<div class="map-note">Day 3 地圖：1 渡輪碼頭 ➔ 2 芬蘭堡 ➔ 3 Alderfelt ➔ 4 Oodi 圖書館 ➔ 5 Nokka 晚餐。</div>
+</section>
+
+<!-- Day 4 (Flight) -->
+<section id="d4" class="section">
+<div class="title"><h2>✈️ DAY 4｜9/18 Fri</h2><small>離境日：搭乘 Finnair AY41</small></div>
+<div class="alert red">
+  <b>硬時間 Deadline：</b>搭乘 <b>AY41 17:30 起飛</b>。建議最晚 <b>15:00 抵達 HEL 機場</b>（14:20 前必須在中央車站搭上 I 或 P 線火車）。
+</div>
+<div class="card"><div class="timeline">
+<div class="stop"><div class="time">09:30–11:30</div><h3><span class="step-num" style="background:var(--green)">1</span> 🛍️ 市區最後採買 ＆ 伴手禮</h3><div class="meta">自<b>住宿基地：Helsinki 市區飯店</b>出發，前往 Stockmann 百貨或 K-Supermarket 購買芬蘭巧克力 (Fazer)、木杯與紀念品。</div></div>
+
+<div class="stop"><div class="time">11:30–12:00</div><h3><span class="step-num" style="background:var(--red)">2</span> 🏨 返回飯店退房＋領取行李</h3><div class="meta">於 12:00 前完成退房。</div></div>
+
+<div class="stop"><div class="time">12:15–13:45</div><h3><span class="step-num" style="background:var(--gold)">3</span> 🍽️ 告別午餐：Story (Kampii 或 Old Market)</h3><div class="meta">享用最後道地的芬蘭鮭魚濃湯與精品咖啡。</div></div>
+
+<div class="stop"><div class="time">14:00–14:40</div><h3><span class="step-num" style="background:var(--blue)">4</span> 🚆 赫爾辛基中央車站 ➔ HEL 機場</h3><div class="meta">搭乘 HSL <b>I Train 或 P Train</b>（車程約 30 分鐘，直達赫爾辛基萬塔機場航廈）。</div><div class="tags"><span class="tag blue">約 30 min 車程</span></div></div>
+
+<div class="stop"><div class="time">15:00–17:30</div><h3><span class="step-num" style="background:var(--red)">5</span> 🛫 赫爾辛基萬塔機場 (HEL) 離境</h3><div class="meta"><b>航班：Finnair AY41｜17:30 起飛</b><br>辦理 Check-in、託運行李、退稅 (Tax Free) 與安檢，完美結束北歐之旅！</div><div class="tags"><span class="tag red">🔴 AY41 17:30</span><span class="tag gold">預計 15:00 到達機場</span></div></div>
+</div></div>
+<div id="map4" class="map"></div>
+<div class="map-note">Day 4 地圖：1 市區採買 ➔ 2 中央車站 ➔ 3 HEL 赫爾辛基機場。</div>
+</section>
+
+<!-- 預約與資訊總結 -->
+<section id="notes" class="section">
+<div class="card"><h2>📌 赫爾辛基預約與交通控制清單</h2>
+<table>
+<tr><th>項目</th><th>細節說明</th></tr>
+<tr><td><b>住宿基地</b></td><td>Helsinki 市區飯店（9/15–9/18，共 3 晚）</td></tr>
+<tr><td><b>9/16 桑拿預約</b></td><td><b>Löyly Helsinki｜16:00–18:00</b>（男1+女1，Booking No. 255315）</td></tr>
+<tr><td><b>9/18 離境航班</b></td><td><b>Finnair AY41｜17:30 起飛</b>（15:00 前抵達機場）</td></tr>
+<tr><td><b>市區交通方案</b></td><td>推薦購買 <b>HSL Day Ticket (ABC 區)</b>，可無限搭乘地圖、電車、公車及芬蘭堡渡輪。</td></tr>
+<tr><td><b>精選餐廳預約建議</b></td><td>Savotta (9/15)、Lappi (9/16)、Nokka (9/17) 均為高人氣餐廳，建議提早預訂。</td></tr>
+</table>
+</div>
+</section>
+
+<footer>
+資料核對基準日：2026-08-30。地圖底圖 © OpenStreetMap contributors / Leaflet。
+</footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const C={blue:"#496b76",green:"#405b4b",red:"#a4473b",gold:"#a87938"};
+function makeMap(id,pts,color=C.blue){
+ const m=L.map(id,{scrollWheelZoom:true,zoomControl:true}).setView(pts[0].xy,13);
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(m);
+ pts.forEach((p,i)=>{
+  const ic=L.divIcon({className:"pin",html:`<div style="width:30px;height:30px;border-radius:50%;background:${p.c||color};border:3px solid #fff;box-shadow:0 2px 8px #0005;color:#fff;font-weight:900;font-size:11px;display:grid;place-items:center">${i+1}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
+  L.marker(p.xy,{icon:ic}).addTo(m).bindPopup(`<b>${p.n}</b><br><span style="font-size:11px">${p.t||""}</span><br><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${p.xy[0]},${p.xy[1]}">↗ Google Maps 導航</a>`);
+ });
+ m.fitBounds(L.latLngBounds(pts.map(p=>p.xy)),{padding:[30,30],maxZoom:14});
+ return m;
+}
+
+// Day 1 Map
+const d1=[
+{n:"Helsinki 市區飯店 (住宿基地)",xy:[60.1704,24.9414],c:C.green,t:"1 寄放行李與入住"},
+{n:"Cafe Ekberg 1852",xy:[60.1648,24.9397],c:C.gold,t:"2 經典肉桂捲 14:00"},
+{n:"赫爾辛基主教座堂 (白教堂)",xy:[60.1695,24.9522],c:C.green,t:"3 白教堂 15:45"},
+{n:"Restaurant Savotta",xy:[60.1689,24.9525],c:C.gold,t:"4 芬蘭傳統晚餐 18:00"}
+];
+makeMap("map1",d1,C.blue);
+
+// Day 2 Map
+const d2=[
+{n:"岩石教堂 Temppeliaukio",xy:[60.1730,24.9252],c:C.green,t:"1 岩石教堂 09:00"},
+{n:"Design District 設計區",xy:[60.1620,24.9400],c:C.blue,t:"2 逛街 11:00"},
+{n:"Old Market Hall (老農貿市場)",xy:[60.1667,24.9531],c:C.gold,t:"3 鮭魚濃湯 12:30"},
+{n:"烏斯佩斯基大教堂 (紅教堂)",xy:[60.1686,24.9600],c:C.blue,t:"4 紅教堂 14:15"},
+{n:"Löyly Helsinki 桑拿",xy:[60.1549,24.9192],c:C.red,t:"5 已預約桑拿 16:00"},
+{n:"Restaurant Lappi",xy:[60.1652,24.9372],c:C.gold,t:"6 拉普蘭風味晚餐 18:30"}
+];
+makeMap("map2",d2,C.red);
+
+// Day 3 Map
+const d3=[
+{n:"集市廣場渡輪碼頭 Kauppatori",xy:[60.1672,24.9538],c:C.blue,t:"1 搭渡輪 09:00"},
+{n:"Suomenlinna (芬蘭堡)",xy:[60.1436,24.9844],c:C.green,t:"2 世界遺產堡壘 09:30"},
+{n:"Ravintola Alderfelt",xy:[60.1450,24.9860],c:C.gold,t:"3 島上午餐 13:00"},
+{n:"Oodi 中央圖書館",xy:[60.1740,24.9382],c:C.blue,t:"4 最美圖書館 15:00"},
+{n:"Restaurant Nokka",xy:[60.1680,24.9635],c:C.gold,t:"5 港區頂級晚餐 18:00"}
+];
+makeMap("map3",d3,C.green);
+
+// Day 4 Map
+const d4=[
+{n:"Helsinki 市區飯店",xy:[60.1704,24.9414],c:C.green,t:"1 退房與伴手禮採買"},
+{n:"赫爾辛基中央車站",xy:[60.1708,24.9414],c:C.blue,t:"2 搭乘 I/P Train 14:00"},
+{n:"赫爾辛基萬塔機場 (HEL)",xy:[60.3172,24.9633],c:C.red,t:"3 AY41 17:30 起飛 (15:00 前抵達)"}
+];
+makeMap("map4",d4,C.red);
+</script>
+</body>
+</html>
