@@ -37,6 +37,7 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <section id="d1" class="section">
 <div class="title"><h2>🚗 9/10 Thu</h2><small>住宿基地：Sommarøy Arctic Hotel</small></div>
+<div class="stop"><div class="time">出發前 20–30 分鐘</div><h3>🛒 🥐 附近超市早餐補給｜依住宿地點與當日路線，於前一晚或早晨最近超市補足早餐、水與車上零食；偏遠路段優先提前購買。</h3><div class="meta">J 人原則：每天明確安排早餐補給，不依賴臨時尋找店家；若遇早班機／早出發，改為前一晚先買好。</div></div>
 <div class="alert green">
   <b>SIXT FIXED：</b>2026/9/10 11:00 Tromsø Airport 取車。離開前在 Eide Handel 超市備糧。
 </div>
@@ -54,6 +55,7 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <section id="d2" class="section">
 <div class="title"><h2>⛴️ 9/11 Fri</h2><small>住宿基地：Moxy Tromsø</small></div>
+<div class="stop"><div class="time">出發前 20–30 分鐘</div><h3>🛒 🥐 附近超市早餐補給｜依住宿地點與當日路線，於前一晚或早晨最近超市補足早餐、水與車上零食；偏遠路段優先提前購買。</h3><div class="meta">J 人原則：每天明確安排早餐補給，不依賴臨時尋找店家；若遇早班機／早出發，改為前一晚先買好。</div></div>
 <div class="alert red">
   <b>J 人注意：</b>渡輪 (181號) 無法預約，強烈建議 <b>08:00</b> 抵達 Brensholmen 港口排隊！
 </div>
@@ -83,7 +85,7 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <footer>
 資料核對基準日：2026-08-23。地圖底圖 © OpenStreetMap contributors / Leaflet。
-</footer>
+<section id="fares" class="section"><h2 id="jmode">📌 渡輪與自駕攻略｜🌧️ J-Mode Plan B／C</h2><div class="card"><p><b>9/11 是週五。</b>目前查到 2026/8/28 起的公開時刻資料顯示，Brensholmen → Botnhamn 週五日間可用多個班次；建議不要鎖死單一班，至少提早 30–45 分鐘抵達碼頭，當天再以營運商／Entur 即時資訊確認。</p><p><b>Plan A：</b>依預定渡輪登 Senja，景點按天氣與日照排序。<br><b>Plan B｜錯過船：</b>立即切下一班，砍最遠端景點，保留 2–3 個核心觀景點。<br><b>Plan C｜渡輪取消／強風：</b>停止追行程，改走陸路可達區域或取消 Senja 當日，避免晚上趕回 Moxy Tromsø 造成 9/12 08:30 還車風險。<br><b>雨天：</b>降低海岸長時間停留；濕滑觀景台與步道不勉強，優先安全停車點與車內機動休息。</p></div></section></footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -133,3 +135,4 @@ const d3=[
 makeMap("map3",d3,C.red, true);
 </script>
 </body></html>
+<!-- V11 QA: hard transport and opening-hour verification applied; recheck dynamic schedules before departure -->

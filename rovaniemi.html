@@ -19,6 +19,7 @@
 table{width:100%;border-collapse:collapse;font-size:11px; margin-top:10px;}th,td{text-align:center;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:middle}th{font-size:10px;color:var(--ink);background:#edf0eb;font-weight:900;}
 .alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px; margin-bottom:10px;}.alert.green{background:#e9f0eb;border-left-color:var(--green)}
 .step-num {display:inline-block; width:20px; height:20px; background:var(--blue); color:#fff; border-radius:50%; text-align:center; line-height:20px; font-size:12px; margin-right:6px; font-weight:900; flex-shrink:0;}
+.fallback-map{height:260px;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:10px}.fallback-map iframe{width:100%;height:100%;border:0}
 .res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
 footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 </style>
@@ -37,35 +38,35 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <section id="d1" class="section">
 <div class="title"><h2>🛬 9/12 Sat</h2><small>住宿基地：Apukka Resort</small></div>
+<div class="stop"><div class="time">出發前 20–30 分鐘</div><h3>🛒 🥐 附近超市早餐補給｜Apukka Resort 周邊商店選擇有限，建議進市區時集中採買隔日早餐與零食。</h3><div class="meta">J 人原則：每天明確安排早餐補給，不依賴臨時尋找店家；若遇早班機／早出發，改為前一晚先買好。</div></div>
 <div class="alert green">
   <b>移動日策略：</b>AY542 抵達後，先搭車至市區 **K-Supermarket** 補給零食泡麵，再前往 **Apukka Resort**。
 </div>
 <div class="card"><div class="timeline">
-<div class="stop"><div class="time">13:10</div><h3><span class="step-num" style="background:var(--blue)">1</span> ✈️ 抵達 Rovaniemi (RVN)</h3><div class="meta">Finnair AY542 抵達。</div></div>
-<div class="stop"><div class="time">14:00–15:00</div><h3><span class="step-num" style="background:var(--gold)">2</span> 🛒 市區超市補給 (建議搭計程車)</h3><div class="meta">至市區 <b>K-Supermarket</b> 採買未來三天補給。</div></div>
-<div class="stop"><div class="time">15:30</div><h3><span class="step-num" style="background:var(--green)">3</span> 🏨 入住住宿基地：Apukka Resort</h3><div class="meta">辦理 Check-in 入住。</div></div>
-<div class="stop"><div class="time">18:00–20:00</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍽️ 晚餐：Restaurant Aitta</h3><div class="meta">在住宿基地 **Apukka Resort** 內享用晚餐。</div></div>
+<div class="stop"><div class="time">12:50–13:20</div><h3><span class="step-num" style="background:var(--blue)">1</span> ✈️ 抵達 Rovaniemi (RVN)</h3><div class="meta">Finnair AY542｜TOS 10:30 → RVN 12:50（以你的票面為準）。</div></div>
+<div class="stop"><div class="time">13:20–14:00</div><h3><span class="step-num" style="background:var(--gold)">2</span> 🛒 市區超市補給 (建議搭計程車)</h3><div class="meta">至市區 <b>K-Supermarket</b> 採買未來三天補給。</div></div>
+<div class="stop"><div class="time">14:30–15:00</div><h3><span class="step-num" style="background:var(--green)">3</span> 🏨 入住住宿基地：Apukka Resort</h3><div class="meta">辦理 Check-in 入住。</div></div>
+<div class="stop"><div class="time">18:00–19:30</div><h3><span class="step-num" style="background:var(--gold)">4</span> 🍽️ 晚餐：Restaurant Aitta</h3><div class="meta">在住宿基地 **Apukka Resort** 內享用晚餐。</div></div>
 <div class="stop"><div class="time">21:00–00:00</div><h3 style="padding-left:26px;">🌌 渡假村內等極光</h3><div class="meta" style="padding-left:26px;">Olkkajärvi 湖畔拍攝極光。</div></div>
 </div></div>
-<div id="map1" class="map"></div>
+<div id="map1" class="map"></div><div class="fallback-map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=25.70%2C66.48%2C26.05%2C66.61&amp;layer=mapnik&amp;marker=66.5654%2C25.8285"></iframe></div>
 </section>
 
 <section id="d2" class="section">
 <div class="title"><h2>🥾 9/13 Sun</h2><small>住宿基地：Apukka Resort</small></div>
+<div class="alert red"><b>交通硬規則：</b>Apukka Shuttle 班次為動態資料。本日不再把 14:15／17:25 等舊時間寫死；出發前以 Apukka 官方 September timetable 與當日 Resort 確認為唯一依據。</div>
 <div class="card"><div class="timeline">
-<div class="stop"><div class="time">08:00–09:20</div><h3><span class="step-num">1</span> 🍳 住宿基地早餐：Apukka Resort</h3><div class="meta">渡假村內早餐。</div></div>
-<div class="stop"><div class="time">09:45–09:55</div><h3><span class="step-num" style="background:var(--red)">2</span> 🚌 搭車前往 Hiking Area</h3><div class="meta">住宿基地門口搭乘 <b>09:45</b> Shuttle Bus。</div></div>
-<div class="stop"><div class="time">10:00–14:00</div><h3><span class="step-num" style="background:var(--green)">3</span> 🌲 Arctic Circle Hiking Area 健行</h3><div class="meta">4 小時秋季健行。</div></div>
-<div class="stop"><div class="time">14:15–14:35</div><h3><span class="step-num" style="background:var(--red)">4</span> 🚌 搭車前往 Santa Claus Village</h3><div class="meta">搭 14:15 接駁車至聖誕老人村。</div></div>
-<div class="stop"><div class="time">14:40–15:30</div><h3><span class="step-num" style="background:var(--gold)">5</span> 🍽️ 午餐：Santa's Salmon Place</h3><div class="meta">炭烤鮭魚小木屋 (營業時間 11:00–18:00)。</div></div>
-<div class="stop"><div class="time">15:30–17:15</div><h3><span class="step-num" style="background:var(--blue)">6</span> 🎅 聖誕老人辦公室與郵局</h3><div class="meta">跨越北極圈線並寄明信片。</div></div>
-<div class="stop"><div class="time">17:25–17:35</div><h3><span class="step-num" style="background:var(--red)">7</span> 🚌 返回住宿基地：Apukka Resort</h3><div class="meta">搭 <b>17:25</b> Shuttle 返回 **Apukka Resort**。</div></div>
+<div class="stop"><div class="time">08:00–09:00</div><h3>🍳 住宿基地早餐：Apukka Resort</h3><div class="meta">早餐後確認 Shuttle 的「實際發車時間、上車點、回程最後班次」。</div></div>
+<div class="stop"><div class="time">09:00–09:30</div><h3>🚌 交通確認＋前往第一站</h3><div class="meta">若官方班次可銜接 Hiking Area，先健行；若班次不利，立即改 Santa Claus Village → 室內備案，不在路邊等待。</div></div>
+<div class="stop"><div class="time">09:30–13:30</div><h3>🌲 Plan A：Arctic Circle Hiking Area 健行</h3><div class="meta">依當日 Shuttle 到站時間調整健行長度，保留至少 45 分鐘交通 Buffer。</div></div>
+<div class="stop"><div class="time">13:30–17:00</div><h3>🎅 Santa Claus Village＋午餐</h3><div class="meta">Santa's Salmon Place、聖誕老人辦公室與郵局。實際移動順序依 Shuttle 當日班次調整。</div></div>
+<div class="stop"><div class="time">17:00–18:30</div><h3>🚌 返回住宿基地：Apukka Resort</h3><div class="meta">搭當日已確認的官方回程 Shuttle；若錯過，立即聯絡 Resort 或改計程車。</div></div>
 </div></div>
-<div id="map2" class="map"></div>
 </section>
 
 <section id="d3" class="section">
 <div class="title"><h2>🐕 9/14 Mon</h2><small>住宿基地：Apukka Resort (全日活動)</small></div>
+<div class="stop"><div class="time">出發前 20–30 分鐘</div><h3>🛒 🥐 附近超市早餐補給｜Apukka Resort 周邊商店選擇有限，建議進市區時集中採買隔日早餐與零食。</h3><div class="meta">J 人原則：每天明確安排早餐補給，不依賴臨時尋找店家；若遇早班機／早出發，改為前一晚先買好。</div></div>
 <div class="card"><div class="timeline">
 <div class="stop"><div class="time">08:00–09:30</div><h3><span class="step-num">1</span> 🍳 住宿基地早餐</h3><div class="meta">**Apukka Resort** 內用早餐。</div></div>
 <div class="stop"><div class="time">10:00–12:00</div><h3><span class="step-num" style="background:var(--red)">2</span> 🐕 Autumn Husky Ride on Wheels</h3><div class="meta"><b>✅ 已預訂 (2 Adults)</b></div></div>
@@ -73,7 +74,7 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 <div class="stop"><div class="time">13:15–14:45</div><h3><span class="step-num" style="background:var(--red)">4</span> 🦌 Meet and Feed Reindeer</h3><div class="meta"><b>✅ 已預訂 (2 Adults)</b></div></div>
 <div class="stop"><div class="time">15:00–17:00</div><h3><span class="step-num" style="background:var(--blue)">5</span> 🧖 芬蘭浴 Sauna 體驗</h3><div class="meta">渡假村 Sauna。晚上返房休息（明早前往 Helsinki）。</div></div>
 </div></div>
-<div id="map3" class="map"></div>
+<div id="map3" class="map"></div><div class="fallback-map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=25.98%2C66.56%2C26.05%2C66.60&amp;layer=mapnik&amp;marker=66.5815%2C26.0152"></iframe></div><div class="map-note">若互動地圖未載入，可直接開啟 <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=66.5815,26.0152">Google Maps｜Apukka Resort</a></div>
 </section>
 
 <section id="fares" class="section">
@@ -94,7 +95,7 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <footer>
 資料核對基準日：2026-08-24。地圖底圖 © OpenStreetMap contributors / Leaflet。
-</footer>
+<section class="section"><h2>🌧️ J-Mode Plan B／C｜Rovaniemi／Apukka</h2><div class="card"><p><b>已查證 2026 年 9 月 Apukka Shuttle：</b>每日運行；9/13 相關時刻應以官方 September timetable 為準，包含 Apukka 09:45／10:15 等班次及回程選項。錯過 Shuttle 時，先找下一班，不要自行假設 14:15／17:25 等舊版時刻仍適用。</p><p><b>雨天：</b>Arctic Circle Hiking Area 改為 Santa Claus Village、Rovaniemi 室內博物館或提早回 Resort。<br><b>Plan C：</b>錯過接駁 → 聯絡 Resort／叫計程車 → 調整同日景點順序；不要讓一個 Shuttle 失誤毀掉已預約活動。</p></div></section></footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -120,18 +121,27 @@ const d1=[
 {n:"K-Supermarket 市區補給",xy:[66.5028,25.7285],c:C.blue,t:"2 補給"},
 {n:"Apukka Resort (住宿基地)",xy:[66.5815,26.0152],c:C.gold,t:"3 Check-in 入住"}
 ];
-makeMap("map1",d1,C.blue, true);
+const m1=makeMap("map1",d1,C.blue, true);
 
 const d2=[
 {n:"Apukka Resort (住宿基地)",xy:[66.5815,26.0152],c:C.gold,t:"1 出發 (09:45) & 回程 (17:35)"},
 {n:"Arctic Circle Hiking Area",xy:[66.5950,26.1360],c:C.green,t:"2 森林健行"},
 {n:"Santa Claus Village",xy:[66.5434,25.8481],c:C.red,t:"3 聖誕老人村"}
 ];
-makeMap("map2",d2,C.green, true);
+const m2=makeMap("map2",d2,C.green, true);
 
 const d3=[
 {n:"Apukka Resort (住宿基地)",xy:[66.5815,26.0152],c:C.gold,t:"1 哈士奇 / 馴鹿 / 桑拿"}
 ];
-makeMap("map3",d3,C.gold);
+const m3=makeMap("map3",d3,C.gold);
+window.addEventListener("load",()=>{
+  [m1,m2,m3].forEach(m=>{ try{m.invalidateSize(true);}catch(e){} });
+  setTimeout(()=>[m1,m2,m3].forEach(m=>{ try{m.invalidateSize(true);}catch(e){} }),350);
+});
+if(window.ResizeObserver){
+  const ro=new ResizeObserver(()=>[m1,m2,m3].forEach(m=>{ try{m.invalidateSize(true);}catch(e){} }));
+  ["map1","map2","map3"].forEach(id=>{const el=document.getElementById(id); if(el) ro.observe(el);});
+}
 </script>
 </body></html>
+<!-- V11 QA: hard transport and opening-hour verification applied; recheck dynamic schedules before departure -->
