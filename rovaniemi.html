@@ -22,6 +22,8 @@ table{width:100%;border-collapse:collapse;font-size:11px; margin-top:10px;}th,td
 .fallback-map{height:260px;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:10px}.fallback-map iframe{width:100%;height:100%;border:0}
 .res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
 footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+
+.lastmile{margin-top:28px}.lastmile h2{margin-bottom:12px}.lm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.lm-card{background:#fffdf8;border:1px solid #ddd8cd;border-radius:14px;padding:16px}.lm-time{font-weight:900;color:#496b76}.lm-route{font-weight:900}.lm-warn{background:#fff3e0;border-left:4px solid #d97706;padding:10px 12px;border-radius:8px}.lm-link{display:inline-block;margin:4px 8px 4px 0}.lm-table{width:100%;border-collapse:collapse}.lm-table th,.lm-table td{border:1px solid #ddd8cd;padding:8px;text-align:left;vertical-align:top}.lm-table th{background:#f1eee6}.lm-steps{margin:8px 0 0 20px;padding:0}.lm-steps li{margin:5px 0}
 </style>
 </head>
 <body>
@@ -62,6 +64,9 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 <div class="stop"><div class="time">13:30–17:00</div><h3>🎅 Santa Claus Village＋午餐</h3><div class="meta">Santa's Salmon Place、聖誕老人辦公室與郵局。實際移動順序依 Shuttle 當日班次調整。</div></div>
 <div class="stop"><div class="time">17:00–18:30</div><h3>🚌 返回住宿基地：Apukka Resort</h3><div class="meta">搭當日已確認的官方回程 Shuttle；若錯過，立即聯絡 Resort 或改計程車。</div></div>
 </div></div>
+<div id="map2" class="map"></div>
+<div class="fallback-map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=25.82%2C66.52%2C26.15%2C66.62&amp;layer=mapnik&amp;marker=66.5434%2C25.8481"></iframe></div>
+<div class="map-note">若互動地圖未載入，可直接開啟 <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=66.5434,25.8481">Google Maps｜Santa Claus Village</a></div>
 </section>
 
 <section id="d3" class="section">
@@ -95,7 +100,10 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <footer>
 資料核對基準日：2026-08-24。地圖底圖 © OpenStreetMap contributors / Leaflet。
-<section class="section"><h2>🌧️ J-Mode Plan B／C｜Rovaniemi／Apukka</h2><div class="card"><p><b>已查證 2026 年 9 月 Apukka Shuttle：</b>每日運行；9/13 相關時刻應以官方 September timetable 為準，包含 Apukka 09:45／10:15 等班次及回程選項。錯過 Shuttle 時，先找下一班，不要自行假設 14:15／17:25 等舊版時刻仍適用。</p><p><b>雨天：</b>Arctic Circle Hiking Area 改為 Santa Claus Village、Rovaniemi 室內博物館或提早回 Resort。<br><b>Plan C：</b>錯過接駁 → 聯絡 Resort／叫計程車 → 調整同日景點順序；不要讓一個 Shuttle 失誤毀掉已預約活動。</p></div></section></footer>
+<section class="section"><h2>🌧️ J-Mode Plan B／C｜Rovaniemi／Apukka</h2><div class="card"><p><b>已查證 2026 年 9 月 Apukka Shuttle：</b>每日運行；9/13 相關時刻應以官方 September timetable 為準，包含 Apukka 09:45／10:15 等班次及回程選項。錯過 Shuttle 時，先找下一班，不要自行假設 14:15／17:25 等舊版時刻仍適用。</p><p><b>雨天：</b>Arctic Circle Hiking Area 改為 Santa Claus Village、Rovaniemi 室內博物館或提早回 Resort。<br><b>Plan C：</b>錯過接駁 → 聯絡 Resort／叫計程車 → 調整同日景點順序；不要讓一個 Shuttle 失誤毀掉已預約活動。</p></div></section><section id="lastmile-rovaniemi" class="section lastmile"><h2>🚌 最後一哩路｜RVN 抵達／Apukka／9/15 機場</h2><div class="lm-grid">
+<div class="lm-card"><div class="lm-route">🛬 9/12 RVN → Apukka Resort</div><p class="lm-time">12:50 AY542 抵達 RVN</p><ol class="lm-steps"><li>下機 → Arrivals → 行李提領。</li><li>抵達大廳外找 🚌 <b>Airport Express</b>；官方目前說明機場巴士會銜接抵達航班，現場乘車最直接。</li><li>先到 Rovaniemi City Center；若 Apukka 接駁時刻能直接銜接，再轉 <b>Apukka Shuttle</b>。</li><li>9 月 Apukka Shuttle：市中心 → Apukka 主要班次含 <b>09:25、11:25、12:40、13:45、16:10、19:30、20:30</b>（9/12–9/30 以官方當日表為準）。</li><li>若抵達時間無法銜接，直接預約 Apukka 官方 transfer / Taxi，不硬等下一班。</li></ol><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Rovaniemi%20Airport&destination=Apukka%20Resort%2C%20Rovaniemi">🗺️ RVN → Apukka</a><a class="nav lm-link" target="_blank" href="https://apukkaresort.fi/about/rovaniemi-travel-info/apukka-shuttle-bus/">🚌 Apukka 官方 Shuttle</a><a class="nav lm-link" target="_blank" href="https://airportbus.fi/en/routes-and-timetables/">🚌 Airport Express</a></div>
+<div class="lm-card"><div class="lm-route">✈️ 9/15 Apukka → RVN → AY534</div><p class="lm-time">14:15 AY534 起飛</p><ol class="lm-steps"><li>早餐 → Check-out。</li><li>若搭 Apukka Shuttle 到 Rovaniemi，再轉 Airport Express / Taxi 到 RVN；<b>不要用晚一班 Shuttle 冒險</b>。</li><li>建議以 <b>12:00 前後抵達 RVN</b> 作為安全目標。</li><li>Check-in／行李 → Security → Gate。</li><li><b>14:15 AY534</b> RVN → HEL，15:30 抵達。</li></ol><p class="lm-warn">🔴 9/15 是航班日：住宿→市中心→機場至少保留一個完整備援方案；若前一班 Shuttle 無法銜接，直接改 Taxi。</p><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Apukka%20Resort%2C%20Rovaniemi&destination=Rovaniemi%20Airport">🗺️ Apukka → RVN</a></div>
+</div></section></footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

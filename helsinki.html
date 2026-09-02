@@ -20,6 +20,10 @@ table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;p
 .step-num {display:inline-block; width:20px; height:20px; background:var(--blue); color:#fff; border-radius:50%; text-align:center; line-height:20px; font-size:12px; margin-right:6px; font-weight:900; flex-shrink:0;}
 .res-box {background:#fffaf1; border:1px dashed #d1a566; padding:8px; border-radius:6px; margin-top:6px; font-size:11px; color:#79531e;}
 footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+
+<style>
+.lastmile{margin-top:28px}.lastmile h2{margin-bottom:12px}.lm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.lm-card{background:#fffdf8;border:1px solid #ddd8cd;border-radius:14px;padding:16px}.lm-time{font-weight:900;color:#496b76}.lm-route{font-weight:900}.lm-warn{background:#fff3e0;border-left:4px solid #d97706;padding:10px 12px;border-radius:8px}.lm-link{display:inline-block;margin:4px 8px 4px 0}.lm-table{width:100%;border-collapse:collapse}.lm-table th,.lm-table td{border:1px solid #ddd8cd;padding:8px;text-align:left;vertical-align:top}.lm-table th{background:#f1eee6}.lm-steps{margin:8px 0 0 20px;padding:0}.lm-steps li{margin:5px 0}
+</style>
 </style>
 </head>
 <body>
@@ -151,7 +155,10 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 
 <footer>
 資料核對基準日：2026-08-30。地圖底圖 © OpenStreetMap contributors / Leaflet。
-<section class="section"><h2>🌧️ J-Mode Plan B／C｜Helsinki 與 Suomenlinna</h2><div class="card"><p><b>Suomenlinna：</b>HSL 19 號渡輪全年運行，Market Square ↔ Suomenlinna 航程約 15 分鐘；2026 秋季時刻請以 HSL Journey Planner 當日資訊為準。票券須在登船前完成。<br><b>雨天：</b>改 Oodi／Ateneum／Kiasma／Design District 室內路線。<br><b>渡輪異動：</b>不等到最後一班；提早回本島。9/18 離境日不安排高風險離島行程。</p></div></section></footer>
+<section class="section"><h2>🌧️ J-Mode Plan B／C｜Helsinki 與 Suomenlinna</h2><div class="card"><p><b>Suomenlinna：</b>HSL 19 號渡輪全年運行，Market Square ↔ Suomenlinna 航程約 15 分鐘；2026 秋季時刻請以 HSL Journey Planner 當日資訊為準。票券須在登船前完成。<br><b>雨天：</b>改 Oodi／Ateneum／Kiasma／Design District 室內路線。<br><b>渡輪異動：</b>不等到最後一班；提早回本島。9/18 離境日不安排高風險離島行程。</p></div></section><section id="lastmile-helsinki" class="section lastmile"><h2>🚆 最後一哩路｜HEL 抵達與 9/18 離境</h2><div class="lm-grid">
+<div class="lm-card"><div class="lm-route">🛬 9/15 HEL → Hotel Kämp</div><p class="lm-time">15:30 AY534 抵達 HEL</p><ol class="lm-steps"><li>下機 → Arrivals → Baggage Claim。</li><li>Helsinki Airport 鐵路站位於航廈下方，跟隨「Train」指標。</li><li>🚆 <b>HSL I／P Train</b> → Helsinki Central，車程約 27–32 分鐘。</li><li>到 Central 後步行／短程交通 → <b>Hotel Kämp</b>（Pohjoisesplanadi 29）。</li><li>若行李多或抵達延誤，改 Taxi。</li></ol><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Helsinki%20Airport&destination=Pohjoisesplanadi%2029%2C%2000100%20Helsinki">🗺️ HEL → Hotel Kämp</a><a class="nav lm-link" target="_blank" href="https://www.hsl.fi/en/travelling/visitors/airport-train">🚆 HSL 機場鐵路</a></div>
+<div class="lm-card"><div class="lm-route">✈️ 9/18 Hotel Kämp → HEL → AY41</div><p class="lm-time">17:30 AY41 起飛；目標 15:00 前到 HEL</p><ol class="lm-steps"><li>Hotel Kämp Check-out／取行李。</li><li>步行至 Helsinki Central Station。</li><li>🚆 HSL <b>I／P Train</b> → Helsinki Airport；官方資訊：I 約 27 分鐘、P 約 32 分鐘。</li><li>機場站就在航廈地下 → 電梯／手扶梯上 Arrivals/Departures。</li><li>Check-in／Bag Drop → Security → Tax Free → Gate。</li></ol><p class="lm-warn">⚠️ 2026 夏季有 I／P 班距調整；官方要求用 HSL App / Journey Planner 看即時班次，不要寫死單一班次。</p><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel%20Kamp%2C%20Pohjoisesplanadi%2029%2C%2000100%20Helsinki&destination=Helsinki%20Airport">🗺️ Hotel Kämp → HEL</a><a class="nav lm-link" target="_blank" href="https://www.hsl.fi/en/travelling/visitors/airport-train">🚆 HSL I／P</a></div>
+</div></section></footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

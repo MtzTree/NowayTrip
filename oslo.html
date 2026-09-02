@@ -20,6 +20,10 @@ table{width:100%;border-collapse:collapse;font-size:11px}th,td{text-align:left;p
 .shop{display:grid;grid-template-columns:34px 1fr auto;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.shop:last-child{border:0}.num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e4ebe8;font-weight:900;color:var(--green)}.shop strong{font-size:13px}.shop small{display:block;color:var(--muted);font-size:10px}.hours{font-size:10px;font-weight:900;background:#f0e9dc;padding:5px 6px;border-radius:7px}.nav{display:inline-block;margin-top:4px;color:var(--blue);font-size:10px;font-weight:900;text-decoration:none}
 .alert{background:#f8eae7;border-left:4px solid var(--red);border-radius:9px;padding:11px 12px;font-size:11px}.green{background:#e9f0eb;border-left-color:var(--green)}
 footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
+
+<style>
+.lastmile{margin-top:28px}.lastmile h2{margin-bottom:12px}.lm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.lm-card{background:#fffdf8;border:1px solid #ddd8cd;border-radius:14px;padding:16px}.lm-time{font-weight:900;color:#496b76}.lm-route{font-weight:900}.lm-warn{background:#fff3e0;border-left:4px solid #d97706;padding:10px 12px;border-radius:8px}.lm-link{display:inline-block;margin:4px 8px 4px 0}.lm-table{width:100%;border-collapse:collapse}.lm-table th,.lm-table td{border:1px solid #ddd8cd;padding:8px;text-align:left;vertical-align:top}.lm-table th{background:#f1eee6}.lm-steps{margin:8px 0 0 20px;padding:0}.lm-steps li{margin:5px 0}
+</style>
 </style>
 </head>
 <body>
@@ -124,7 +128,10 @@ footer{padding:20px 0 50px;color:var(--muted);font-size:9px}
 <footer>
 資料與規則以官方資料為優先。
 
-<section id="facts" class="section"><h2>📌 查證｜🌧️ J-Mode Plan B／C｜Oslo 雨備與延誤</h2><div class="card"><p><b>雨天：</b>9/6 Hovedøya 改為 National Museum／Oslo City Hall／Aker Brygge 室內休息，使用 Ruter Journey Planner 當日查船。<br><b>船班異動：</b>不硬等最後一班；直接切換市區室內景點。<br><b>購物超時：</b>固定 16:30 進入收尾，17:00 之後只保留 Nobel 等硬節點。</p></div></section></footer>
+<section id="facts" class="section"><h2>📌 查證｜🌧️ J-Mode Plan B／C｜Oslo 雨備與延誤</h2><div class="card"><p><b>雨天：</b>9/6 Hovedøya 改為 National Museum／Oslo City Hall／Aker Brygge 室內休息，使用 Ruter Journey Planner 當日查船。<br><b>船班異動：</b>不硬等最後一班；直接切換市區室內景點。<br><b>購物超時：</b>固定 16:30 進入收尾，17:00 之後只保留 Nobel 等硬節點。</p></div></section><section id="lastmile-oslo" class="section lastmile"><h2>🚶‍♂️ 最後一哩路｜OSL ↔ Oslo／9/7 前往機場</h2><div class="lm-grid">
+<div class="lm-card"><div class="lm-route">🛬 9/4 抵達 OSL → Clarion Hotel The Hub</div><p class="lm-time">12:35 抵達 OSL</p><ol class="lm-steps"><li>下機 → Arrivals → 護照查驗／入境。</li><li>前往 Baggage Claim 領行李。</li><li>依「Train / Oslo」指標前往機場火車站；車站在航廈下方。</li><li>🚆 <b>Vy</b>：OSL → Oslo S，約 23 分鐘；以 Vy Journey Planner 選最早可搭班次。</li><li>Oslo S 下車 → 步行約 5 分鐘到 <b>Clarion Hotel The Hub</b>（Biskop Gunnerus gate 3）。</li></ol><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Oslo%20Airport&destination=Biskop%20Gunnerus%20gate%203%2C%200155%20Oslo">🗺️ OSL → Hotel 路線</a><a class="nav lm-link" target="_blank" href="https://www.vy.no/en/train/oslo-gardermoen">🚆 Vy 官方</a></div>
+<div class="lm-card"><div class="lm-route">✈️ 9/7 Clarion Hotel The Hub → OSL → SK4418</div><p class="lm-time">航班硬時間：13:40 起飛</p><ol class="lm-steps"><li>Hotel Check-out → 步行至 Oslo S。</li><li>🚆 <b>Vy</b>：Oslo S → Oslo Airport，車程約 23 分鐘；建議目標 <b>10:00 前抵達 OSL</b>。</li><li>抵達後 → 出發大廳 → SAS Check-in／Bag Drop → Security → Gate。</li><li>不要安排第二個景點；午餐與最後補給放在安檢後。</li></ol><p class="lm-warn">⚠️ Vy 官網指出機場班次請用 Journey Planner 查即時出發時間；本日不寫死單一車次，避免時刻變更造成誤導。</p><a class="nav lm-link" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Biskop%20Gunnerus%20gate%203%2C%200155%20Oslo&destination=Oslo%20Airport%20Gardermoen">🗺️ Hotel → OSL</a><a class="nav lm-link" target="_blank" href="https://www.vy.no/en/train/oslo-gardermoen">🚆 Vy 時刻／購票</a></div>
+</div></section></footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
